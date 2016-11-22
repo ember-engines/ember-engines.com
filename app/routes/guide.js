@@ -31,5 +31,11 @@ export default Ember.Route.extend({
       nextPage: pageIndex < TABLE_OF_CONTENTS.length ? TABLE_OF_CONTENTS[pageIndex + 1] : null,
       prevPage: pageIndex > 0 ? TABLE_OF_CONTENTS[pageIndex - 1] : null
     };
+  },
+
+  resetController: function(controller, isExiting, transition) {
+    if (isExiting) {
+      controller.set('page', undefined);
+    }
   }
 });

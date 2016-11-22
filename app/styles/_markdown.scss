@@ -1,4 +1,12 @@
 .markdown {
+  margin-top: 2rem;
+  line-height: 2;
+
+  & code {
+    color: $red;
+    font-family: Consolas, monaco, monospace;
+  }
+
   & > ul,
   & > ol {
     margin-left: 1rem;
@@ -9,9 +17,14 @@
   }
 
   & > h2,
-  & > h3 {
+  & > h3,
+  & > h4 {
     font-weight: normal;
     color: $blue;
+    margin-bottom: 1rem;
+  }
+
+  & > hr {
     margin-bottom: 1rem;
   }
 

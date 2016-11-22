@@ -1,9 +1,26 @@
 .toc {
-  &_item {
+  list-style: none;
 
+  &_header {
+    margin-top: 2rem;
+    font-weight: normal;
+    color: $blue;
+    margin-bottom: 0.5rem;
+  }
+
+  &_item {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
   }
 
   &_link {
+    color: $red;
+    text-decoration: none;
+    border-bottom: 2px solid rgba($red, 0);
+    transition: border-bottom-color 0.2s;
 
+    &:hover {
+      border-bottom-color: $red;
+    }
   }
 }
