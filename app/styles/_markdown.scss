@@ -1,0 +1,39 @@
+.markdown {
+  & > ul,
+  & > ol {
+    margin-left: 1rem;
+  }
+
+  & li {
+    margin-bottom: 1rem;
+  }
+
+  & > h2,
+  & > h3 {
+    font-weight: normal;
+    color: $blue;
+    margin-bottom: 1rem;
+  }
+
+  & > p {
+    margin-bottom: 1rem;
+  }
+
+  & > blockquote {
+    font-style: italic;
+    border-left: 2px solid $red;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: $red;
+    text-decoration: none;
+    border-bottom: 2px solid rgba($red, 0);
+    transition: border-bottom-color 0.2s;
+
+    &:hover {
+      border-bottom-color: $red;
+    }
+  }
+}

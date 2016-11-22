@@ -1,3 +1,6 @@
+$red: #dd6a58;
+$blue: #2c3e50;
+
 * {
   margin: 0;
   padding: 0;
@@ -5,195 +8,15 @@
 }
 
 body {
-  border: 0.75rem solid rgba(#2C3E50, .95);
+  border: 0.75rem solid rgba($blue, .95);
   border-bottom: 0;
   font: 100% / 1.5 "Helvetica Neue", helvetica, arial, sans-serif;
+  min-height: 100vh;
 }
 
-.install-banner {
-  height: 100vh;
-  position: relative;
-  background: linear-gradient(to top, rgba(#2C3E50, .95) , rgba(#dd6a58, .95));
-
-  &:before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('../install-bg.jpeg');
-    background-size: cover;
-    background-position: center center;
-  }
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  &_title {
-    text-align: center;
-    color: white;
-    font-weight: 300;
-    font-size: 4rem;
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.25);
-
-    & > span {
-      color: #dd6a58;
-      font-weight: 400;
-    }
-  }
-
-  &_actions {
-    margin: 2rem;
-  }
-
-  &_action {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: 1px solid #dd6a58;
-    background: rgba(#dd6a58, 0.2);
-    border-radius: 4px;
-    font-weight: 300;
-    text-decoration: none;
-    margin: 0 0.25rem;
-    transition: background 0.2s;
-
-    &:hover {
-      background: rgba(#dd6a58, 1);
-    }
-  }
-
-  &_snippet {
-    background: rgba(0, 0, 0, .3);
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
-    margin: 2rem 0;
-
-    & > code {
-      font-size: 1rem;
-      font-family: "Consolas", monospace;
-      color: white;
-
-      &:before {
-        content: '$';
-        margin-right: 0.5rem;
-        opacity: 0.5;
-      }
-    }
-  }
-
-  &_tagline {
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 300;
-    max-width: 400px;
-    line-height: 1.2;
-  }
-}
-
-.markdown {
-  & > ul,
-  & > ol {
-    margin-left: 1rem;
-  }
-
-  & li {
-    margin-bottom: 1rem;
-  }
-
-  & > h2 {
-    font-weight: normal;
-    color: #2C3E50;
-    margin-bottom: 1rem;
-  }
-
-  & > p {
-    margin-bottom: 1rem;
-  }
-
-  & > blockquote {
-    font-style: italic;
-    border-left: 2px solid #dd6a58;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  a {
-    color: #dd6a58;
-    text-decoration: none;
-    border-bottom: 2px solid rgba(#dd6a58, 0);
-    transition: border-bottom-color 0.2s;
-
-    &:hover {
-      border-bottom-color: #dd6a58;
-    }
-  }
-}
-
-.content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem 0;
-
-  &_title {
-    font-size: 2rem;
-    position: relative;
-    margin-bottom: 2rem;
-    font-weight: normal;
-    color: #2C3E50;
-
-    & > span {
-      color: #dd6a58;
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(to left, #2C3E50 , #dd6a58);
-    }
-  }
-}
-
-.content-nav {
-  margin-bottom: 1rem;
-
-  &_link {
-    color: #dd6a58;
-    margin-right: 1rem;
-    display: inline-block;
-    text-decoration: none;
-    position: relative;
-
-    &:after {
-      content: '';
-      position: absolute;
-      width: 0;
-      bottom: 0;
-      left: 0;
-      background: #dd6a58;
-      height: 2px;
-      transition: width 0.2s;
-    }
-
-    &.active:after,
-    &:hover:after {
-      width: 100%;
-    }
-
-    &.active {
-      color: #2C3E50;
-
-      &:after {
-        background: #2C3E50;
-      }
-    }
-  }
-}
+@import "_install-banner";
+@import "_markdown";
+@import "_content";
+@import "_content-nav";
+@import "_table-of-contents";
+@import "_pagination";

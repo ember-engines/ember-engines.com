@@ -1,0 +1,35 @@
+.content-nav {
+  margin-bottom: 1rem;
+
+  &_link {
+    color: $red;
+    margin-right: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      bottom: 0;
+      left: 0;
+      background: $red;
+      height: 2px;
+      transition: width 0.2s;
+    }
+
+    &.active:after,
+    &:hover:after {
+      width: 100%;
+    }
+
+    &.active {
+      color: $blue;
+
+      &:after {
+        background: $blue;
+      }
+    }
+  }
+}

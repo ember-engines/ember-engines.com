@@ -1,13 +1,40 @@
 <section class="content">
-  <h2 class="content_title"><span>Ember</span> Engines</h2>
+  <h2 class="content_title"><span>Ember</span> Engines - Guide</h2>
 
   <nav class="content-nav">
     {{#link-to "index" class="content-nav_link"}}Intro{{/link-to}}
-    {{#link-to "guide" class="content-nav_link"}}Guide{{/link-to}}
+    {{#link-to "guide" (query-params page=undefined) current-when="guide" class="content-nav_link"}}Guide{{/link-to}}
     <a href="https://github.com/ember-engines" target="_blank" class="content-nav_link">GitHub</a>
   </nav>
 
-  <div class="markdown">
-    {{md-text text=(fr-markdown-file "guide/introduction") typographer=true}}
-  </div>
+  {{#if model.currentPage}}
+    <div class="markdown">
+      {{md-text text=(fr-markdown-file model.currentPageMarkdown) typographer=true}}
+    </div>
+
+    <div class="pagination">
+      {{#if model.prevPage}}
+        {{#link-to "guide" (query-params page=model.prevPage.page) class="pagination_prev pagination_link"}}
+          Previous: {{model.prevPage.title}}
+        {{/link-to}}
+      {{/if}}
+
+      {{#if model.nextPage}}
+        {{#link-to "guide" (query-params page=model.nextPage.page) class="pagination_next pagination_link"}}
+          Next: {{model.nextPage.title}}
+        {{/link-to}}
+      {{/if}}
+    </div>
+  {{else}}
+    <h2 class="toc_header">Table of Contents</h2>
+    <ul class="toc">
+      {{#each model.tableOfContents as |entry|}}
+        <li class="toc_item">
+          {{#link-to "guide" (query-params page=entry.page) class="toc_link"}}
+            {{entry.title}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  {{/if}}
 </section>
