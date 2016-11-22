@@ -13,8 +13,6 @@ body {
 .install-banner {
   height: 100vh;
   position: relative;
-  background: #2C3E50;
-  background: -webkit-linear-gradient(to top, #2C3E50 , #dd6a58);
   background: linear-gradient(to top, rgba(#2C3E50, .95) , rgba(#dd6a58, .95));
 
   &:before {
@@ -93,6 +91,7 @@ body {
     font-size: 1.5rem;
     font-weight: 300;
     max-width: 400px;
+    line-height: 1.2;
   }
 }
 
@@ -104,9 +103,31 @@ body {
   & > h2 {
     font-weight: normal;
     color: #2C3E50;
+    margin-bottom: 1rem;
   }
 
   & > p {
+    margin-bottom: 1rem;
+  }
+
+  &_title {
+    font-size: 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+
+    & > span {
+      color: #dd6a58;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to left, #2C3E50 , #dd6a58);
+    }
   }
 }
 
@@ -116,15 +137,32 @@ body {
   &_link {
     color: #dd6a58;
     margin-right: 1rem;
-    /*border: 1px solid #2C3E50;*/
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
     display: inline-block;
-    background: rgba(#2C3E50, 0.3);
-    transition: background 0.2s;
+    text-decoration: none;
+    position: relative;
 
-    &:hover {
-      background: rgba(#2C3E50, 1);
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      bottom: 0;
+      left: 0;
+      background: #dd6a58;
+      height: 2px;
+      transition: width 0.2s;
+    }
+
+    &.active:after,
+    &:hover:after {
+      width: 100%;
+    }
+
+    &.active {
+      color: #2C3E50;
+
+      &:after {
+        background: #2C3E50;
+      }
     }
   }
 }
