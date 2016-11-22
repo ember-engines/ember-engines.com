@@ -95,10 +95,15 @@ body {
   }
 }
 
-.content {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 1rem 0;
+.markdown {
+  & > ul,
+  & > ol {
+    margin-left: 1rem;
+  }
+
+  & li {
+    margin-bottom: 1rem;
+  }
 
   & > h2 {
     font-weight: normal;
@@ -110,10 +115,36 @@ body {
     margin-bottom: 1rem;
   }
 
+  & > blockquote {
+    font-style: italic;
+    border-left: 2px solid #dd6a58;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #dd6a58;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(#dd6a58, 0);
+    transition: border-bottom-color 0.2s;
+
+    &:hover {
+      border-bottom-color: #dd6a58;
+    }
+  }
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem 0;
+
   &_title {
     font-size: 2rem;
     position: relative;
     margin-bottom: 2rem;
+    font-weight: normal;
+    color: #2C3E50;
 
     & > span {
       color: #dd6a58;
