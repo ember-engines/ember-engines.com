@@ -1,4 +1,6 @@
 .pagination {
+  overflow: hidden;
+
   &_link {
     color: $red;
     margin-right: 1rem;
@@ -32,9 +34,7 @@
   }
 
   &_prev {
-    position: absolute;
-    left: 0;
-    bottom: 1rem;
+    float: left;
 
     &:after {
       left: initial;
@@ -43,8 +43,6 @@
   }
 
   &_next {
-    position: absolute;
-    right: 0;
-    bottom: 1rem;
+    float: right;
   }
 }

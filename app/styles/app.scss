@@ -14,6 +14,10 @@ body {
   min-height: 100vh;
 }
 
+img {
+  max-width: 100%;
+}
+
 @import "_install-banner";
 @import "_markdown";
 @import "_content";
