@@ -1,10 +1,11 @@
 import Ember from 'ember';
 import TABLE_OF_CONTENTS from '../../utils/table-of-contents';
+import findIndex from '../../utils/find-index';
 
 export default Ember.Route.extend({
   model(params) {
     const page = params.page;
-    const pageIndex = TABLE_OF_CONTENTS.findIndex((entry) => entry.page === page);
+    const pageIndex = findIndex(TABLE_OF_CONTENTS, (entry) => entry.page === page);
 
     return {
       tableOfContents: TABLE_OF_CONTENTS,
