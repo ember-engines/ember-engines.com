@@ -40,9 +40,18 @@
       left: initial;
       right: 0;
     }
+
+    @include mobile {
+      margin-bottom: 0.5rem;
+      float: none;
+    }
   }
 
   &_next {
     float: right;
+
+    @include mobile {
+      float: none;
+    }
   }
 }
