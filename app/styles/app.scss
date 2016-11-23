@@ -1,6 +1,12 @@
 $red: #dd6a58;
 $blue: #2c3e50;
 
+@mixin mobile {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +18,10 @@ body {
   border-bottom: 0;
   font: 100% / 1.5 "Helvetica Neue", helvetica, arial, sans-serif;
   min-height: 100vh;
+
+  @include mobile {
+    border: 0;
+  }
 }
 
 img {
