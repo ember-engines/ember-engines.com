@@ -5,7 +5,11 @@
     margin-top: 2rem;
     font-weight: normal;
     color: $blue;
-    margin-bottom: 0.5rem;
+  }
+
+  &_note {
+    color: $blue;
+    margin-bottom: 1rem;
   }
 
   &_item {

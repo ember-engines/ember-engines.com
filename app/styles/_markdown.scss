@@ -22,6 +22,18 @@
     font-weight: normal;
     color: $blue;
     margin-bottom: 1rem;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 1em;
+      top: 50%;
+      margin-top: -0.5em;
+      right: calc(100% + 0.5rem);
+      background: $red;
+    }
   }
 
   & > hr {
@@ -34,7 +46,7 @@
 
   & > blockquote {
     font-style: italic;
-    border-left: 2px solid $red;
+    border-left: 2px solid rgba($blue, 0.5);
     padding-left: 1rem;
     margin-bottom: 1rem;
   }

@@ -1,8 +1,8 @@
 ## What Are Engines?
 
-> Engines allow multiple logical applications to be composed together into a single application from the user's perspective. - [Engines RFC](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md)
-
 Put briefly, Engines are isolated, composable applications. They have almost all the same features as normal Ember applications, except an Engine requires a host application to boot it and provide a Router instance.
+
+> Engines allow multiple logical applications to be composed together into a single application from the user's perspective. - [Engines RFC](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md)
 
 Since each Engine shares a single router and host, you can compose logical applications in new and truly ambitious ways!
 

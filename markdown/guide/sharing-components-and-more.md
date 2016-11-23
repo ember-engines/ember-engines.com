@@ -6,21 +6,27 @@ For instance, having to provide several route paths and services, such as Ember 
 
 However, there are use cases for needing to share components and more across Engine boundaries. In those instances, the proper solution is to move the shared constructs into an addon.
 
-Addon namespace -> re-export in engine namespace
+### Addon Re-exports
+
+In order to use things like Components and Helpers from addons in your Engine, they will need to be present in your Engine's namespace. This is accomplished by doing what is called a "re-export":
 
 ```js
+//super-blog/addon/components/foo-bar.js
+export { default } from 'super-addon/components/foo-bar';
+```
+
+As you can see we're simply exporting the import from `super-addon`. Since we're exporting an export, we call it re-exporting.
+
+As you can imagine, doing this for everything in the addons you need to use could be very tedious. So `ember-engines` provides a simple way to automatically re-export everything an addon usually provides to an application: the `EngineAddon` base class.
+
+The `EngineAddon` base class hooks into Ember-CLI's build hooks to automatically re-export addon code into your Engine. You can add it to your Engine like so:
+
+```js
+// super-blog/index.js
 var EngineAddon = require('ember-engines/lib/engine-addon');
 module.exports = EngineAddon.extend({
   name: 'super-blog'
 });
 ```
 
-The `EngineAddon` base class automatically imports any re-exports from your dependencies.
-
-```json
-{
-  "dependencies": {
-    "common-components": "1.0.0"
-  }
-}
-```
+That's it! Now, any addon included in your package.json file will automatically get included in your Engine.
