@@ -41,7 +41,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-remarkable": "3.2.0",
     "ember-resolver": "^2.0.3",
-    "liquid-fire": "0.26.4",
+    "liquid-fire": "^0.26.4",
     "loader.js": "^4.0.10"
   }
 }
