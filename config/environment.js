@@ -6,6 +6,14 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    fastboot: {
+      hostWhitelist: [
+        /^localhost:\d+$/,
+        /^127.0.0.1:\d+$/,
+        'ember-engines.com',
+        'www.ember-engines.com'
+      ]
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
