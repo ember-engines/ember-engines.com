@@ -1,14 +1,9 @@
-import Ember from 'ember';
 import config from './config/environment';
-import scrollTracker from './utils/scroll-tracker';
+import ScrollTrackingRouter from 'scroll-tracker/scroll-tracking-router';
 
-const Router = Ember.Router.extend({
+const Router = ScrollTrackingRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL,
-  willTransition() {
-    this._super(...arguments);
-    scrollTracker.capture();
-  }
+  rootURL: config.rootURL
 });
 
 Router.map(function() {

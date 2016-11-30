@@ -42,5 +42,10 @@
     "ember-resolver": "^2.0.3",
     "liquid-fire": "^0.26.5",
     "loader.js": "^4.0.10"
+  },
+  "ember-addon": {
+    "paths": [
+      "lib/scroll-tracker"
+    ]
   }
 }
