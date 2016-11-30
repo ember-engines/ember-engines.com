@@ -7,9 +7,7 @@ const Router = ScrollTrackingRouter.extend({
 });
 
 Router.map(function() {
-  this.route('guide', function() {
-    this.route('page', { path: '/:page' });
-  });
+  this.mount('guide');
 });
 
 export default Router;

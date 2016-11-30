@@ -3,7 +3,7 @@
 <ul class="toc">
   {{#each model.tableOfContents as |entry|}}
     <li class="toc_item">
-      {{#link-to "guide.page" entry.page class="toc_link"}}
+      {{#link-to "page" entry.page class="toc_link"}}
         {{entry.title}}
       {{/link-to}}
     </li>
