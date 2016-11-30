@@ -73,4 +73,4 @@ dist
 │       └── public-asset.jpg
 ```
 
-For more details on the build output and what each file represents, check out the [Built Engine Ouput](https://github.com/dgeb/ember-engines#built-engine-output) section of the `ember-engines` readme.
+For more details on the build output and what each file represents, check out the [Built Engine Output](https://github.com/dgeb/ember-engines#built-engine-output) section of the `ember-engines` readme.
