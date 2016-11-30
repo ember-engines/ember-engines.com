@@ -1,0 +1,18 @@
+{
+  "name": "guide",
+  "keywords": [
+    "ember-addon",
+    "ember-engine"
+  ],
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "liquid-fire": "*",
+    "ember-remarkable": "*",
+    "ember-fr-markdown-file": "*"
+  },
+  "ember-addon": {
+    "paths": [
+      "../scroll-tracker"
+    ]
+  }
+}
