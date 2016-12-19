@@ -10,9 +10,9 @@ var app = new EmberApp(defaults, {
   assetLoader: {
     generateURI: function(filePath) {
       if (EmberApp.env() === 'production') {
-        return 'http://production.cdn.com/' + filePath;
+        return '//production.cdn.com/' + filePath;
       } else {
-        return 'http://staging.static.com/' + filePath;
+        return 'local/static/' + filePath;
       }
     }
   }
