@@ -1,4 +1,4 @@
-## Deploying Engines
+## Deploying An Engine
 
 In many cases, the engine code will be served from a static server, typically a CDN.
 This server will probably not share the same root location as your application.
