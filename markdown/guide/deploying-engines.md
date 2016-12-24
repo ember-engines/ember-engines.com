@@ -17,5 +17,4 @@ var app = new EmberApp(defaults, {
 });
 ```
 
-The `generateURI` function receives the `filePath` for each asset and must return a string of the asset's location.
-For more info, see the [ember-asset-loader documentation](https://github.com/ember-engines/ember-asset-loader#generating-custom-uris)
+The `generateURI` function receives the `filePath` for each asset and must return a string of the asset's location. For more info, see the [ember-asset-loader documentation](https://github.com/ember-engines/ember-asset-loader#generating-custom-uris)
