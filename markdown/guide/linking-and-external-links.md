@@ -23,13 +23,13 @@ Notice that the `super-blog` portion of the path is now missing, this is because
 Previously we mentioned that each Engine has it's own `application` route, that route corresponds to the mount point when within the Engine. So, if you wanted to go to `super-blog` (or the root of the Engine) from within the Engine itself, you would do something like:
 
 ```hbs
-{{#link-to "application"}}Blog Home{{/link-to}}
+{{#link-to "application"}}Goes to Blog Home{{/link-to}}
 ```
 
 Or, maybe even:
 
 ```hbs
-{{#link-to "application"}}Blog Home{{/link-to}}
+{{#link-to "index"}}Also goes to Blog Home{{/link-to}}
 ```
 
 It's a little confusing at first, but the gist is to think of the route paths as if the Engine were it's own application.
