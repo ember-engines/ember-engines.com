@@ -8,7 +8,7 @@ var app = new EmberApp(defaults, {
   assetLoader: {
     generateURI: function(filePath) {
       if (EmberApp.env() === 'production') {
-        return '//production.cdn.com/' + filePath;
+        return 'https://production.cdn.com/' + filePath;
       } else {
         return 'local/static/' + filePath;
       }
