@@ -80,7 +80,7 @@ export default Eng;
 
 This code will hopefully look very familiar to anyone that has seen an Ember Application's `app.js` file before. Since Engine's are so closely related to Applications it makes sense that their initial files would look similar as well. Let's note 4 important points here:
 
-1. **`config`**: Each Engine has it's own configuration file. This is super similar to the one Ember Applications normally have. It is even found in `config/environment.js`
+1. **`config`**: Each Engine has its own configuration file. This is super similar to the one Ember Applications normally have. It is even found in `config/environment.js`
 2. **`Resolver`**: Engine's have their own Resolver. This means they look things up independently of their host application.
 2. **`modulePrefix`**: Since Engine's have their own Resolver, they also must have their own `modulePrefix` to define which modules belong to their namespace. Since the `config` is empty by default, you'll want to add this to your `config/environment.js` file.
 4. **`loadInitializers`**: Again, since Engine's have their own Resolver and thus their own Container, we want to make sure we run initializers against the Engine on boot-up so they can perform tasks like injections.
@@ -91,7 +91,7 @@ This code will hopefully look very familiar to anyone that has seen an Ember App
 
 Let's take a moment to talk about namespaces.
 
-Every Ember Application has a namespace defined by it's `modulePrefix` value. This namespace allows your `Resolver` to find the modules created by Ember-CLI at runtime. You'll likely have noticed before that if you try to import a module that is in your `app` directory, then you need to use the `modulePrefix` instead.
+Every Ember Application has a namespace defined by its `modulePrefix` value. This namespace allows your `Resolver` to find the modules created by Ember-CLI at runtime. You'll likely have noticed before that if you try to import a module that is in your `app` directory, then you need to use the `modulePrefix` instead.
 
 So, if you have the file `app/components/foo-bar.js` and the `modulePrefix` `baz`, you'll have to look it up using `baz/components/foo-bar`.
 
