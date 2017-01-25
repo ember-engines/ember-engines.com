@@ -27,7 +27,7 @@ cd super-blog/
 ember install ember-engines
 ```
 
-A quick note, Engine's should have `ember-engines` listed as a `devDependency` or `peerDependency`. The reason for this is that if you include `ember-engines` as a `dependency` of both the host application and the Engine, you'll wind up duplicating some crucial functionality which can cause problems. Therefore, it is best that the host application provide the copy to be used.
+A quick note, Engines should have `ember-engines` listed as a `devDependency` or `peerDependency`. The reason for this is that if you include `ember-engines` as a `dependency` of both the host application and the Engine, you'll wind up duplicating some crucial functionality which can cause problems. Therefore, it is best that the host application provide the copy to be used.
 
 Next, we need to install the proper version of Ember for use with ember-engines. Assuming you're on version `0.4.0` or higher, you'll want to make sure you use Ember `2.10.0` or greater:
 
