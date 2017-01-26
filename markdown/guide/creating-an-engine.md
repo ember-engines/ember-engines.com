@@ -96,7 +96,7 @@ Every Ember Application has a namespace defined by its `modulePrefix` value. Thi
 So, if you have the file `app/components/foo-bar.js` and the `modulePrefix` `baz`, you'll have to look it up using `baz/components/foo-bar`.
 
 Similarly, Addons, and therefore Engines, have their own namespace defined by their `name` value in their `index.js`. Anything in the `addon` directory, gets put into the Addon's namespace. Having a separate namespace is one of the primary ways 
-achieve code isolation.
+Engines achieve code isolation.
 
 As long as the `modulePrefix` for your application doesn't match the `name` of an Addon, then your application won't be able to resolve modules living in your Addon. This is why it is important that Engines have their own `Resolver` with a separate `modulePrefix` that matches the Addon's `name`.
 
