@@ -49,19 +49,52 @@ Finally, we need to ensure `ember-cli-htmlbars` is listed as a dependency for co
 
 Pretty simple so far. At this point, we have everything needed to actually create an Engine, but we don't have an Engine itself.
 
-### Create `engine.js`
+### Configuring your Engine
 
-We need to do one more thing to make this addon an actual Engine: create the `engine.js` file. We can do the simple:
+Within your Engine's root directory, modify `index.js` so that your addon is configured as an engine using the EngineAddon extension:
+
+```js
+// index.js
+
+/*jshint node:true*/
+const EngineAddon = require('ember-engines/lib/engine-addon');
+
+module.exports = EngineAddon.extend({
+  name: 'ember-blog'
+});
+```
+
+Within your Engine's `config` directory, modify the `environment.js` file:
+
+```js
+// config/enironment.js
+
+/*jshint node:true*/
+'use strict';
+
+module.exports = function(environment) {
+  const ENV = {
+    modulePrefix: 'ember-blog',
+    environment: environment
+  }
+
+  return ENV;
+};
+```
+
+Finally, to make this addon an actual Engine, create a `engine.js` file under the `addon` directory:
 
 ```bash
 touch addon/engine.js
 ```
 
-It is important to note that we put the `engine.js` file inside the `addon` directory. This is because we want it to be within the Addon's/Engine's namespace. We'll explore this idea more later, but it is important to note now.
+The `engine.js` file lives inside the `addon` directory because we want it to be within the Addon's/Engine's namespace. We'll explore this idea more later, but it is important to note for now.
 
-Next, we add the following code to `engine.js`:
+Next, add the following code to `engine.js`:
 
 ```js
+// addon/engine.js
+
 import Engine from 'ember-engines/engine';
 import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
@@ -78,11 +111,13 @@ loadInitializers(Eng, modulePrefix);
 export default Eng;
 ```
 
-This code will hopefully look very familiar to anyone that has seen an Ember Application's `app.js` file before. Since Engines are so closely related to Applications it makes sense that their initial files would look similar as well. Let's note 4 important points here:
+This code will look familiar to anyone that's seen an Ember Application's `app.js` file before. Since Engines are so closely related to Applications, it makes sense that their initial files look similar.
 
-1. **`config`**: Each Engine has its own configuration file. This is super similar to the one Ember Applications normally have. It is even found in `config/environment.js`
+There are four important points from the `engine.js` file:
+
+1. **`config`**: Each Engine has its own configuration file, similar to the one Ember Applications normally have. It's even found in the same location - `config/environment.js`
 2. **`Resolver`**: Engines have their own Resolver. This means they look things up independently of their host application.
-2. **`modulePrefix`**: Since Engines have their own Resolver, they also must have their own `modulePrefix` to define which modules belong to their namespace. Since the `config` is empty by default, you'll want to add this to your `config/environment.js` file.
+3. **`modulePrefix`**: Since Engines have their own Resolver, they also must have their own `modulePrefix` to define which modules belong to their namespace. Since the `config` is empty by default, you'll want to add this to your `config/environment.js` file.
 4. **`loadInitializers`**: Again, since Engines have their own Resolver and thus their own Container, we want to make sure we run initializers against the Engine on boot-up so they can perform tasks like injections.
 
 ---
@@ -95,7 +130,7 @@ Every Ember Application has a namespace defined by its `modulePrefix` value. Thi
 
 So, if you have the file `app/components/foo-bar.js` and the `modulePrefix` `baz`, you'll have to look it up using `baz/components/foo-bar`.
 
-Similarly, Addons, and therefore Engines, have their own namespace defined by their `name` value in their `index.js`. Anything in the `addon` directory, gets put into the Addon's namespace. Having a separate namespace is one of the primary ways 
+Similarly, Addons, and therefore Engines, have their own namespace defined by their `name` value in their `index.js`. Anything in the `addon` directory, gets put into the Addon's namespace. Having a separate namespace is one of the primary ways
 Engines achieve code isolation.
 
 As long as the `modulePrefix` for your application doesn't match the `name` of an Addon, then your application won't be able to resolve modules living in your Addon. This is why it is important that Engines have their own `Resolver` with a separate `modulePrefix` that matches the Addon's `name`.
