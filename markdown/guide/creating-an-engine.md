@@ -60,9 +60,12 @@ Within your Engine's root directory, modify `index.js` so that your addon is con
 const EngineAddon = require('ember-engines/lib/engine-addon');
 
 module.exports = EngineAddon.extend({
-  name: 'ember-blog'
+  name: 'ember-blog',
+  lazyLoading: false
 });
 ```
+
+We'll leave the `lazyLoading` flag as `false` for now, as we'll be discussing the topic of lazy-loading engines in depth later on in this guide.
 
 Within your Engine's `config` directory, modify the `environment.js` file:
 
