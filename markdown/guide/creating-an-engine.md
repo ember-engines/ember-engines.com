@@ -70,7 +70,7 @@ We'll leave the `lazyLoading` flag as `false` for now, as we'll be discussing th
 Within your Engine's `config` directory, modify the `environment.js` file:
 
 ```js
-// config/enironment.js
+// config/environment.js
 
 /*jshint node:true*/
 'use strict';
