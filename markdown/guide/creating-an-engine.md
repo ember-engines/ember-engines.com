@@ -33,7 +33,7 @@ Next, we need to install the proper version of Ember for use with ember-engines.
 
 ```bash
 rm -rf bower_components/ember
-bower install --save ember#2.10.0
+bower install --save ember#^2.10.0
 ```
 
 For other versions, check out the [compatibility information in the readme](https://github.com/dgeb/ember-engines/blob/master/README.md#important-note-about-compatibility-and-stability).
