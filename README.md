@@ -4,10 +4,12 @@ This repo contains the Ember application for [ember-engines.com](http://ember-en
 
 ## Installation
 
-* `git clone https://github.com/ember-engines/ember-engines.com.git`
-* `cd ember-engines-website`
-* `npm install`
-* `bower install`
+```bash
+git clone https://github.com/ember-engines/ember-engines.com.git
+cd ember-engines.com
+npm install
+bower install
+```
 
 ## Development
 
