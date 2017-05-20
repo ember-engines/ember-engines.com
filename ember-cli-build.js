@@ -4,7 +4,10 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    fingerprint: {
+      // Avoid fingerprinting the content of the guide
+      ignore: ['engines-dist/guide/assets/engine-vendor.js']
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
