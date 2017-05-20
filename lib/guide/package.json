@@ -5,6 +5,7 @@
     "ember-engine"
   ],
   "dependencies": {
+    "ember-cli-babel": "*",
     "ember-cli-htmlbars": "*",
     "liquid-fire": "*",
     "ember-remarkable": "*",
