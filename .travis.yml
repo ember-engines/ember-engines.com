@@ -1,27 +1,29 @@
 ---
 language: node_js
 node_js:
-  - "4"
+  - "6"
 
 sudo: false
 
 cache:
+  yarn: true
   directories:
     - node_modules
+    - bower_components
 
 before_install:
   - npm config set spin false
-  - npm install -g bower
+  - yarn global add bower
   - bower --version
-  - npm install phantomjs-prebuilt
+  - yarn install phantomjs-prebuilt
   - node_modules/phantomjs-prebuilt/bin/phantomjs --version
 
 install:
-  - npm install
+  - yarn install
   - bower install
 
 script:
-  - npm test
+  - yarn test
 
 branches:
   only:
