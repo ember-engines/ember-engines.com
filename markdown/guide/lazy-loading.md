@@ -17,7 +17,7 @@ Next time you build your application, you should have a lazy loading Engine!
 
 ### Route-less Lazy Engines
 
-Currently, lazy loading is not supported for route-less Engines. Progress can be tracked at [this issue](https://github.com/dgeb/ember-engines/issues/232).
+Currently, lazy loading is not supported for route-less Engines. Progress can be tracked at [this issue](https://github.com/ember-engines/ember-engines/issues/232).
 
 ### Routing Considerations
 
@@ -73,4 +73,4 @@ dist
 │       └── public-asset.jpg
 ```
 
-For more details on the build output and what each file represents, check out the [Built Engine Output](https://github.com/dgeb/ember-engines#built-engine-output) section of the `ember-engines` readme.
+For more details on the build output and what each file represents, check out the [Built Engine Output](https://github.com/ember-engines/ember-engines#built-engine-output) section of the `ember-engines` readme.

@@ -36,7 +36,7 @@ rm -rf bower_components/ember
 bower install --save ember#^2.10.0
 ```
 
-For other versions, check out the [compatibility information in the readme](https://github.com/dgeb/ember-engines/blob/master/README.md#important-note-about-compatibility-and-stability).
+For other versions, check out the [compatibility information in the readme](https://github.com/ember-engines/ember-engines/blob/master/README.md#important-note-about-compatibility-and-stability).
 
 Finally, we need to ensure `ember-cli-htmlbars` is listed as a dependency for compiling our templates:
 
