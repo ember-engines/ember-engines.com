@@ -19,10 +19,10 @@ Do note that since Engines have not had a 1.0.0 release and some features are st
 
 ### Additional Resources
 
-- [Ember Engines on GitHub](https://github.com/dgeb/ember-engines)
+- [Ember Engines on GitHub](https://github.com/ember-engines/ember-engines)
 - [Engines RFC](https://github.com/emberjs/rfcs/pull/10)
 - [Engine Linking RFC](https://github.com/emberjs/rfcs/pull/122)
-- [Ember Asset Loader on GitHub](https://github.com/trentmwillis/ember-asset-loader)
+- [Ember Asset Loader on GitHub](https://github.com/ember-engines/ember-asset-loader)
 - [Asset Manifest RFC](https://github.com/emberjs/rfcs/pull/153)
 - [Asset Loader Service RFC](https://github.com/emberjs/rfcs/pull/158)
 

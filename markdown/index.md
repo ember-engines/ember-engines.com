@@ -18,10 +18,10 @@ There are [a variety of motivations](https://github.com/emberjs/rfcs/blob/master
 
 ## Get Help &amp; Contribute
 
-The Ember Engines source code (including this website) is available on [GitHub](http://github.com/ember-engines). If you run into an error with the Engines code itself or think a feature is missing, please [file an issue](https://github.com/dgeb/ember-engines/issues).
+The Ember Engines source code (including this website) is available on [GitHub](http://github.com/ember-engines). If you run into an error with the Engines code itself or think a feature is missing, please [file an issue](https://github.com/ember-engines/ember-engines/issues).
 
 The best way to get help for project-specific issues is via the [Ember Community Slack](https://ember-community-slackin.herokuapp.com/). Once you’ve signed up, join the [#-ember-engines](https://embercommunity.slack.com/archives/-ember-engines) channel.
 
 ## Engines Roadmap
 
-Ember Engines are currently pre-1.0 software and under active development. The best way to stay informed on what's changing is to [watch the repo](https://github.com/dgeb/ember-engines) and keep up-to-date with [Ember's RFCs](https://github.com/emberjs/rfcs/pulls).
+Ember Engines are currently pre-1.0 software and under active development. The best way to stay informed on what's changing is to [watch the repo](https://github.com/ember-engines/ember-engines) and keep up-to-date with [Ember's RFCs](https://github.com/emberjs/rfcs/pulls).
