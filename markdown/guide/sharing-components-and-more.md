@@ -29,4 +29,4 @@ module.exports = EngineAddon.extend({
 });
 ```
 
-That's it! Now, any addon included in your package.json file will automatically get included in your Engine.
+That's it! Now, any addon included in your package.json `dependencies` key will automatically get included in your Engine.
