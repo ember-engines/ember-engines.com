@@ -9,7 +9,9 @@ If you've been following along and paying attention, we've stressed frequently t
 var EngineAddon = require('ember-engines/lib/engine-addon');
 module.exports = EngineAddon.extend({
   name: 'super-blog',
-  lazyLoading: true
+  lazyLoading: {
+    enabled: true
+  }
 });
 ```
 
