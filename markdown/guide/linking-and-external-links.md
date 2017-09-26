@@ -83,7 +83,7 @@ _Note that the Engine name, which is normally dasherized, is camel-cased here in
 You can use these external routes within your Engine via the `{{link-to-external}}` component:
 
 ```hbs
-{{link-to-external "home"}}
+{{link-to-external "home" "home"}}
 ```
 
 Or, one of the programmatic APIs, such as `Route#transitionToExternal` and `Route#replaceWithExternal`:
