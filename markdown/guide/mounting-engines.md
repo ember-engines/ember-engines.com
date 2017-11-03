@@ -72,4 +72,4 @@ To mount a route-less Engine, you use the `{{mount}}` keyword in any of your tem
 
 And that's it! The Engine's `application.hbs` will be rendered into the DOM at the mount location.
 
-At this point in time, the Engine name is the only argument that `{{mount}}` accepts and it must be a static string. Variables for Engine names are not currently supported.
+Prior to Ember 2.16, the `{{mount` helper only accepts an Engine's name, no other variables are supported. As of Ember 2.16 a `model` variable is supported. For more information, please see [the documentation](https://emberjs.com/api/ember/2.16/classes/Ember.Templates.helpers/methods/mount?anchor=mount) for this helper.
