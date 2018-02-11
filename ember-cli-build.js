@@ -1,9 +1,10 @@
-/*jshint node:true*/
-/* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+'use strict';
+
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
-  var app = new EmberApp(defaults, {
+  let app = new EmberApp(defaults, {
+    // Add options here
     fingerprint: {
       // Avoid fingerprinting the content of the guide
       ignore: ['engines-dist/guide/assets/engine-vendor.js']

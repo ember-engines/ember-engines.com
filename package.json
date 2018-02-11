@@ -1,54 +1,55 @@
 {
   "name": "ember-engines-website",
   "version": "0.0.0",
-  "description": "Small description for ember-engines-website goes here",
   "private": true,
+  "description": "Small description for ember-engines-website goes here",
+  "license": "MIT",
+  "author": "",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
+  "repository": "https://github.com/ember-engines/ember-engines.com",
   "scripts": {
     "build": "ember build",
-    "start": "ember server",
+    "lint:js": "eslint ./*.js app config lib server tests",
+    "start": "ember serve",
     "test": "ember test"
   },
-  "repository": "https://github.com/ember-engines/ember-engines.com",
-  "engines": {
-    "node": ">= 0.12.0"
-  },
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-cli": "2.13.2",
+    "ember-cli": "~2.18.2",
     "ember-cli-app-version": "^3.0.0",
-    "ember-cli-babel": "^6.1.0",
+    "ember-cli-babel": "^6.6.0",
     "ember-cli-dependency-checker": "^2.0.0",
-    "ember-cli-eyeglass": "1.3.1",
+    "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars": "^2.0.1",
-    "ember-cli-htmlbars-inline-precompile": "^0.4.3",
+    "ember-cli-htmlbars-inline-precompile": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
-    "ember-cli-jshint": "^2.0.1",
-    "ember-cli-qunit": "^4.0.0",
+    "ember-cli-qunit": "^4.1.1",
+    "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
-    "ember-cli-shims": "^1.1.0",
-    "ember-cli-test-loader": "^2.1.0",
-    "ember-cli-uglify": "^1.2.0",
+    "ember-cli-uglify": "^2.0.0",
+    "liquid-fire": "^0.27.3",
+    "ember-fr-markdown-file": "^0.0.0",
+    "ember-remarkable": "^3.3.0",
+    "ember-cli-eyeglass": "1.3.1",
     "ember-engines": "0.5.4",
     "ember-export-application-global": "^2.0.0",
-    "ember-fr-markdown-file": "^0.0.0",
     "ember-load-initializers": "^1.0.0",
-    "ember-remarkable": "^3.3.0",
-    "ember-resolver": "^4.1.0",
-    "ember-source": "2.13.2",
-    "liquid-fire": "^0.27.3",
-    "loader.js": "^4.0.10"
+    "ember-resolver": "^4.0.0",
+    "ember-source": "~2.18.0",
+    "eslint-plugin-ember": "^5.0.0",
+    "loader.js": "^4.2.3"
   },
   "ember-addon": {
     "paths": [
       "lib/guide",
       "lib/scroll-tracker"
     ]
+  },
+  "engines": {
+    "node": "^4.5 || 6.* || >= 7.*"
   }
 }
