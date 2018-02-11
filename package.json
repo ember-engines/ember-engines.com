@@ -12,7 +12,7 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/ember-engines/ember-engines.com",
   "engines": {
     "node": ">= 0.12.0"
   },
