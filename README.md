@@ -7,7 +7,7 @@ This repo contains the Ember application for [ember-engines.com](http://ember-en
 ```bash
 git clone https://github.com/ember-engines/ember-engines.com.git
 cd ember-engines.com
-npm install
+npm or yarn install
 bower install
 ```
 
