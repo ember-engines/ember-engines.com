@@ -23,7 +23,7 @@ The `EngineAddon` base class hooks into Ember-CLI's build hooks to automatically
 
 ```js
 // super-blog/index.js
-var EngineAddon = require('ember-engines/lib/engine-addon');
+const EngineAddon = require('ember-engines/lib/engine-addon');
 module.exports = EngineAddon.extend({
   name: 'super-blog'
 });

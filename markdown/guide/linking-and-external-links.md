@@ -63,7 +63,9 @@ So, when you mount your Engine, you'll need to make sure the host specifies appr
 
 ```js
 // dummy/app/app.js
-const App = Ember.Application.extend({
+import Application from '@ember/application';
+
+const App = Application.extend({
   // ...
   engines: {
     superBlog: {
@@ -89,6 +91,8 @@ You can use these external routes within your Engine via the `{{link-to-external
 Or, one of the programmatic APIs, such as `Route#transitionToExternal` and `Route#replaceWithExternal`:
 
 ```js
+import Route from "@ember/routing/route";
+
 export default Route.extend({
   actions: {
     goHome() {

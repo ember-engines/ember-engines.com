@@ -19,7 +19,9 @@ This means that your Engine will expect the host application to provide both the
 
 ```js
 // dummy/app/app.js
-const App = Ember.Application.extend({
+import Application from '@ember/application';
+
+const App = Application.extend({
   // ...
   engines: {
     superBlog: {

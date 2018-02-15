@@ -32,7 +32,9 @@ Since the links to your Engine are constructed before the Engine itself is loade
 For example, if you had a `Post` route defined like so:
 
 ```js
-export default Ember.Route.extend({
+import Route from "@ember/routing/route";
+
+export default Route.extend({
   serialize(model) {
     return { post_id: model.id };
   }
