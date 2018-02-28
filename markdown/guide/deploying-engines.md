@@ -4,7 +4,7 @@ In many cases, your engine code may be served from a static server, typically a 
 
 ```js
 // host-app/ember-cli-build.js
-var app = new EmberApp(defaults, {
+let app = new EmberApp(defaults, {
   assetLoader: {
     generateURI: function(filePath) {
       if (EmberApp.env() === 'production') {

@@ -4,7 +4,7 @@ Now that we have all the conceptual and theoretical talk out of the way, let's a
 
 ### Create An Addon
 
-As discussed previously, Engines are distributed as Addons, and since there is not yet an "engine" blueprint for Ember-CLI, we'll start by creating a vanilla Addon. The command for this is simply:
+As discussed previously, Engines are distributed as Addons and In-Repo-Addons, and since there is not yet an "engine" blueprint for Ember-CLI, we'll start by creating a vanilla Addon. The command for this is simply:
 
 ```bash
 ember addon <engine-name>
@@ -14,6 +14,13 @@ So, if we name our Engine `super-blog`, we just do the following:
 
 ```bash
 ember addon super-blog
+```
+
+In order to create an engine within an existing application's project, run the
+`in-repo-engine` generator:
+
+```
+ember g in-repo-engine <engine-name>
 ```
 
 ### Install Engine Dependencies
