@@ -26,4 +26,4 @@ Do note that since Engines have not had a 1.0.0 release and some features are st
 - [Asset Manifest RFC](https://github.com/emberjs/rfcs/pull/153)
 - [Asset Loader Service RFC](https://github.com/emberjs/rfcs/pull/158)
 
-_Note: this guide is accurate as of the 0.4.0 release of ember-engines_.
+_Note: this guide is accurate as of the 0.5.0 release of ember-engines_.
