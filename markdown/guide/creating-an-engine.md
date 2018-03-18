@@ -2,28 +2,45 @@
 
 Now that we have all the conceptual and theoretical talk out of the way, let's actually make an Engine!
 
-### Create An Addon
+As discussed previously, Engines are distributed as Addons and In-Repo-Addons.
 
-As discussed previously, Engines are distributed as Addons and In-Repo-Addons, and since there is not yet an "engine" blueprint for Ember-CLI, we'll start by creating a vanilla Addon. The command for this is simply:
+### Create as In-Repo-Engine
 
-```bash
-ember addon <engine-name>
-```
-
-So, if we name our Engine `super-blog`, we just do the following:
-
-```bash
-ember addon super-blog
-```
-
-In order to create an engine within an existing application's project, run the
+To create an engine within an existing application's project, run the
 `in-repo-engine` generator:
 
 ```
 ember g in-repo-engine <engine-name>
 ```
 
-### Install Engine Dependencies
+So, if we name our Engine `super-blog`, we just do the following:
+
+```bash
+ember g in-repo-engine super-blog
+```
+
+This has added a directory named `lib` and an app addon directory structure named for `super-blog`.
+
+Using the blueprint in-repo-engine, ember-cli has added all the appropriate files to create a new app structure.
+
+### Create as Addon
+
+Separate addon projects can be created with the addon command:
+
+```bash
+ember addon <engine-name>
+```
+
+So, if we name our Engine `chat-engine`, we just do the following:
+
+```bash
+ember addon chat-engine
+```
+
+Using a vanilla addon we still need turn it into an engine, follow the steps below.
+
+
+#### Install Engine Dependencies
 
 At this point, you have a vanilla Addon which is not yet an Engine, so let's introduce the remaining pieces needed for it to function as one.
 
@@ -56,7 +73,7 @@ Finally, we need to ensure `ember-cli-htmlbars` is listed as a dependency for co
 
 Pretty simple so far. At this point, we have everything needed to actually create an Engine, but we don't have an Engine itself.
 
-### Configuring your Engine
+#### Configuring your Engine
 
 Within your Engine's root directory, modify `index.js` so that your addon is configured as an engine using the EngineAddon extension:
 
