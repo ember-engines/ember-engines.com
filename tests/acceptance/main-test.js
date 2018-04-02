@@ -1,85 +1,70 @@
-import { test } from 'qunit';
-import moduleForAcceptance from 'ember-engines-website/tests/helpers/module-for-acceptance';
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
+import { click, find, visit, currentURL } from '@ember/test-helpers';
 
 function verifyExternalLink(assert, selector, href) {
-  assert.equal(find(selector)[0].href, href);
+  assert.equal(find(selector).href, href);
 }
 
 function verifyActiveLink(assert, selector) {
-  assert.ok(find(selector)[0].classList.contains('active'));
+  assert.ok(find(selector).classList.contains('active'));
 }
 
-moduleForAcceptance('Acceptance | main');
+module('Acceptance | main', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('index has proper navigation', function(assert) {
-  assert.expect(7);
+  test('index has proper navigation', async function(assert) {
+    assert.expect(7);
 
-  visit('/');
+    await visit('/');
 
-  // Verify hero buttons
-  andThen(() => {
-    assert.equal(currentPath(), 'index');
+    assert.equal(currentURL(), '/');
     verifyExternalLink(assert, '.install-banner_action:nth-child(2)', 'https://github.com/ember-engines');
-  });
 
-  click('.install-banner_action:nth-child(1)');
-  andThen(() => {
-    assert.equal(currentPath(), 'guide.index');
-  });
+    await click('.install-banner_action:nth-child(1)');
 
-  // Verify content navigation
-  click('.content-nav_link:nth-child(1)');
-  andThen(() => {
-    assert.equal(currentPath(), 'index');
+    assert.equal(currentURL(), '/guide');
+
+    // Verify content navigation
+    await click('.content-nav_link:nth-child(1)');
+
+    assert.equal(currentURL(), '/');
     verifyActiveLink(assert, '.content-nav_link:nth-child(1)');
     verifyExternalLink(assert, '.content-nav_link:nth-child(3)', 'https://github.com/ember-engines');
+
+    await click('.content-nav_link:nth-child(2)');
+
+    assert.equal(currentURL(), '/guide');
   });
 
-  click('.content-nav_link:nth-child(2)');
-  andThen(() => {
-    assert.equal(currentPath(), 'guide.index');
-  });
-});
+  test('guide navigation works properly', async function(assert) {
+    assert.expect(12);
 
-test('guide navigation works properly', function(assert) {
-  assert.expect(15);
+    await visit('/guide');
 
-  visit('/guide');
+    assert.equal(currentURL(), '/guide');
+    assert.ok(find('.toc'), 'table of contents rendered');
 
-  andThen(() => {
-    assert.equal(currentPath(), 'guide.index');
-    assert.equal(find('.toc').length, 1, 'table of contents rendered');
-  });
+    await click('.toc_item:first-child > .toc_link');
 
-  click('.toc_item:first-child > .toc_link');
-  andThen(() => {
-    assert.equal(currentPath(), 'guide.page');
     assert.equal(currentURL(), '/guide/introduction');
+    assert.notOk(find('.pagination_prev'));
+    assert.ok(find('.pagination_next'));
 
-    assert.equal(find('.pagination_prev').length, 0);
-    assert.equal(find('.pagination_next').length, 1);
-  });
+    await click('.pagination_next');
 
-  click('.pagination_next');
-  andThen(() => {
-    assert.equal(currentPath(), 'guide.page');
     assert.equal(currentURL(), '/guide/what-are-engines');
+    assert.ok(find('.pagination_prev'));
+    assert.ok(find('.pagination_next'));
 
-    assert.equal(find('.pagination_prev').length, 1);
-    assert.equal(find('.pagination_next').length, 1);
-  });
+    await click('.content-nav_link:nth-child(2)');
 
-  click('.content-nav_link:nth-child(2)');
-  andThen(() => {
-    assert.equal(currentPath(), 'guide.index');
-  });
+    assert.equal(currentURL(), '/guide');
 
-  click('.toc_item:last-child > .toc_link');
-  andThen(() => {
-    assert.equal(currentPath(), 'guide.page');
+    await click('.toc_item:last-child > .toc_link');
+
     assert.equal(currentURL(), '/guide/testing');
-
-    assert.equal(find('.pagination_prev').length, 1);
-    assert.equal(find('.pagination_next').length, 0);
+    assert.ok(find('.pagination_prev'));
+    assert.notOk(find('.pagination_next'));
   });
 });

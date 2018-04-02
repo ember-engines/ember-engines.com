@@ -20,7 +20,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    fastboot: {
+      hostWhitelist: ['ember-engines.com', 'www.ember-engines.com', /^localhost:\d+$/]
+    },
   };
 
   if (environment === 'development') {

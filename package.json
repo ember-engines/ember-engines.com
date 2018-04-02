@@ -19,7 +19,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-cli": "~2.18.2",
+    "ember-cli": "~3.1.0-beta.1",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-dependency-checker": "^2.0.0",
@@ -38,8 +38,9 @@
     "ember-fr-markdown-file": "^0.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-remarkable": "^3.6.1",
+    "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^4.0.0",
-    "ember-source": "~2.18.0",
+    "ember-source": "~3.1.0-beta.1",
     "eslint-plugin-ember": "^5.0.0",
     "liquid-fire": "^0.29.1",
     "loader.js": "^4.2.3"
