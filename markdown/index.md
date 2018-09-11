@@ -20,7 +20,7 @@ There are [a variety of motivations](https://github.com/emberjs/rfcs/blob/master
 
 The Ember Engines source code (including this website) is available on [GitHub](http://github.com/ember-engines). If you run into an error with the Engines code itself or think a feature is missing, please [file an issue](https://github.com/ember-engines/ember-engines/issues).
 
-The best way to get help for project-specific issues is via the [Ember Community Slack](https://ember-community-slackin.herokuapp.com/). Once you’ve signed up, join the [#-ember-engines](https://embercommunity.slack.com/archives/-ember-engines) channel.
+The best way to get help for project-specific issues is via the [Ember Community Discord](https://discordapp.com/invite/zT3asNS). Once you’ve signed up, join the [#ember-engines](https://discordapp.com/channels/480462759797063690/487221820638887947) channel.
 
 ## Engines Roadmap
 
