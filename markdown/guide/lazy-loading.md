@@ -6,7 +6,7 @@ If you've been following along and paying attention, we've stressed frequently t
 
 ```js
 // super-blog/index.js
-var EngineAddon = require('ember-engines/lib/engine-addon');
+const EngineAddon = require('ember-engines/lib/engine-addon');
 module.exports = EngineAddon.extend({
   name: 'super-blog',
   lazyLoading: {
