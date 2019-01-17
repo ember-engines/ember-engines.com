@@ -1,7 +1,9 @@
 {{#liquid-bind model class="page-content" as |page|}}
-  <div class="markdown">
-    {{md-text text=(fr-markdown-file page.currentPageMarkdown) typographer=true}}
-  </div>
+
+  {{markdown-to-html
+    markdown=(fr-markdown-file page.currentPageMarkdown)
+    extensions="highlight"
+    class="markdown" }}
 
   <div class="pagination">
     {{#if page.prevPage}}
