@@ -4216,6 +4216,13 @@ ember-cli@~3.7.1:
     watch-detector "^0.1.0"
     yam "^1.0.0"
 
+ember-copy@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ember-copy/-/ember-copy-1.0.0.tgz#426554ba6cf65920f31d24d0a3ca2cb1be16e4aa"
+  integrity sha512-aiZNAvOmdemHdvZNn0b5b/0d9g3JFpcOsrDgfhYEbfd7SzE0b69YiaVK2y3wjqfjuuiA54vOllGN4pjSzECNSw==
+  dependencies:
+    ember-cli-babel "^6.6.0"
+
 ember-engines@0.5.26:
   version "0.5.26"
   resolved "https://registry.yarnpkg.com/ember-engines/-/ember-engines-0.5.26.tgz#5c900730f6d4b16b362c5dd7ac6eac85c6fa881e"
@@ -6784,10 +6791,10 @@ linkify-it@^2.0.0:
   dependencies:
     uc.micro "^1.0.1"
 
-liquid-fire@^0.29.1:
-  version "0.29.2"
-  resolved "https://registry.yarnpkg.com/liquid-fire/-/liquid-fire-0.29.2.tgz#db3900c0d6554262e2c2f30a3f24681a3006f850"
-  integrity sha512-kk/Bt+4+mI+LT1MgsTu+hxFvFk1tpfF2N80jLnziRe366GybIEomgfB4VDaWSvnpG+QWWIPJVj0z1oi3ia7SEQ==
+liquid-fire@^0.29.5:
+  version "0.29.5"
+  resolved "https://registry.yarnpkg.com/liquid-fire/-/liquid-fire-0.29.5.tgz#da8e3158e3f96c34a8cf371b90b8ae941ea8960d"
+  integrity sha512-h+KxMaCvavkAfL5duNc5tQikrZxzbGVvUdmBU9mjkInUQQKvTjpD1DwphRKk6qWRRuDY9HT2ecY0Hf6/gMXkJA==
   dependencies:
     broccoli-funnel "^1.0.1"
     broccoli-merge-trees "^1.0.0"
@@ -6795,6 +6802,7 @@ liquid-fire@^0.29.1:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
     ember-cli-version-checker "^2.0.0"
+    ember-copy "^1.0.0"
     ember-getowner-polyfill "^2.0.1"
     ember-hash-helper-polyfill "^0.2.0"
     match-media "^0.2.0"
