@@ -1,8 +1,6 @@
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { click, find, visit, currentURL } from '@ember/test-helpers';
-import showdown from 'showdown';
-import showdownHighlight from 'showdown-highlight';
 
 function verifyExternalLink(assert, selector, href) {
   assert.equal(find(selector).href, href);
@@ -14,9 +12,6 @@ function verifyActiveLink(assert, selector) {
 
 module('Acceptance | main', function(hooks) {
   setupApplicationTest(hooks);
-  // TODO find a cleaner way
-  // this copies the logic from the showdown initializer
-  showdown.extension('highlight', showdownHighlight);
 
   test('index has proper navigation', async function(assert) {
     assert.expect(7);
