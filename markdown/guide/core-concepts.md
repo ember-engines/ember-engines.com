@@ -10,7 +10,7 @@ Addons come in two distinct flavors: _Standard_ and _In-Repo_. Standard Addons (
 
 This distinction is important for Engines, as it is fairly likely to want a logical application represented by an Engine but only use it with a specific Ember Application. In those cases, using an in-repo-engine is a good alternative to consider instead of maintaining two separate repositories.
 
-It is recommended to read through the "[Developing Addons & Blueprints](http://ember-cli.com/extending/#developing-addons-and-blueprints)" portion of the Ember-CLI user guide before moving onto the "[Creating An Engine](./creating-an-engine.md)" portion of the guide.
+It is recommended to read through the "[Writing Addons](https://cli.emberjs.com/release/writing-addons/)" portion of the Ember-CLI user guide before moving onto the "[Creating An Engine](./creating-an-engine.md)" portion of the guide.
 
 ### Isolation & Dependencies
 
