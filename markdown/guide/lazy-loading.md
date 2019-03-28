@@ -83,15 +83,18 @@ dist
 │   ├── host-application.js
 │   ├── vendor.css
 │   └── vendor.js
-├── crossdomain.xml
 ├── engines-dist
 │   └── lazy-engine
+|       ├── config
+│       |   ├── enviroment.js
 │       ├── assets
 │       │   ├── engine-vendor.css
 │       │   ├── engine-vendor.js
 │       │   ├── engine.css
 │       │   └── engine.js
 │       └── public-asset.jpg
+├── asset-manifest.json
+├── crossdomain.xml
 ├── index.html
 └── robots.txt
 ```
