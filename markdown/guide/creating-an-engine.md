@@ -184,7 +184,7 @@ export default buildRoutes(function() {
 });
 ```
 
-The callback passed to `buildRoutes` functions the same way as [`Router#map`](http://emberjs.com/api/classes/Ember.Router.html#method_map) does in a normal application. This means, the `routes.js` file for our `super-blog` might look something like:
+The callback passed to `buildRoutes` functions the same way as [`Router#map`](https://api.emberjs.com/ember/release/classes/EmberRouter) does in a normal application. This means, the `routes.js` file for our `super-blog` might look something like:
 
 ```js
 import buildRoutes from 'ember-engines/routes';
