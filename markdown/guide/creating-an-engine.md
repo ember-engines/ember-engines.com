@@ -23,6 +23,25 @@ This has added a directory named `lib` and an app addon directory structure name
 
 Using the blueprint in-repo-engine, ember-cli has added all the appropriate files to create a new app structure.
 
+If you want to do is to depend on the `common` in-repo addon, so we can re-use the common elements within the engine. Let’s take a look at `lib/super-blog/package.json`:
+
+```json
+{
+  "name": "super-blog",
+
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*"
+  },
+
+  "ember-addon": {
+    "paths": [
+      "../common"
+    ]
+  }
+}
+```
+
 ### Create as Addon
 
 Separate addon projects can be created with the addon command:
