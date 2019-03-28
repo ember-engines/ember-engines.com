@@ -135,7 +135,7 @@ module named `lazy-engine/templates/application` inside of the
 
  #### `/addon/styles/**/*.css`
 
- CSS files will be built similarly to how they are processed inside of typical
+CSS files will be built similarly to how they are processed inside of typical
 adddons. Typical addon behavior is as follows:
 
 1. All nested addons are processed. Each of them may return a `style` tree. By
@@ -156,7 +156,7 @@ lexicographically after it (`zeta`) will clobber the contents of
 `zeta/addon/styles/alpha.css`. (This is also a possible consequence of DAG
 topsorting.)
 
- Lazy engines will use a variation of this approach:
+Lazy engines will use a variation of this approach:
 
 1. The engine itself will be treated as if it is a top-level dependency. This
 means that `addon/styles/**/*.css` will end up inside of `engine.css`.
@@ -179,10 +179,31 @@ behavior.
 
  #### Asset Manifest
 
-Further, the engine must enumerate its primary assets (JS and CSS) in order to
+Further, the engine must enumerate its primary bundles (JS and CSS) in order to
 be loaded by the asset loading service. That will be generated at
 `/dist/asset-manifest.json` at build time. It will also by default be inserted
 into a meta tag config inside of the host application's `index.html`.
+
+A asset manifest output looks like this:
+
+```json
+{
+  "bundles": {
+    "guide": {
+      "assets": [
+        {
+          "uri": "/engines-dist/<lazy-engine>/assets/engine-vendor.js",
+          "type": "js"
+        },
+        {
+          "uri": "/engines-dist/<lazy-engine>/assets/engine.js",
+          "type": "js"
+        }
+      ]
+    }
+  }
+}
+```
 
  ### Nested Eager Engines
 
