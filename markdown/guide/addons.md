@@ -23,6 +23,16 @@ ember-engines will automatically try to deduplicate addons used by your host app
 
 If addons are not included in the host app, they will be included in the engine's vendor bundle. 
 
+Isolation and liability is generally hard to solve, all possible cases have down sides here:
+
+ 1) Include shared deps into the host app - Downside: Increases initial bundle size.
+
+ 2) Include shared deps into each engine bundle - Downside: Duplicated stuff in multiple engine bundles.
+
+ 3) Somehow split out shared deps into dedicated bundles `(e.g. /engine-assets/shared-by-a-and-b.js)` - Downside: You might end up with 20 bundles `(e.g. shared-by-a-and-b, shared-by-b-and-c-, shared-by-a-b-and-c, ...)`, and it is probably pretty complicated from a built step perspective
+
+The **case 1** is currently the best approach
+
 Note that the deduplication between host app and addon depends on the `cacheKeyForTree()` method of the addon. It will only deduplicate if the cache key returned by that method is the same. This will by default be the case, unless the addon provides a custom `treeForAddon()` hook. If that is the case, the addon should provide a custom `cacheKeyForTree()` method that returns a static key - for example:
 
 ```js
