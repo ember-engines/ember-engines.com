@@ -9,7 +9,7 @@ As discussed previously, Engines are distributed as Addons and In-Repo-Addons.
 To create an engine within an existing application's project, run the
 `in-repo-engine` generator:
 
-```
+```bash
 ember g in-repo-engine <engine-name>
 ```
 
