@@ -9,7 +9,6 @@ Since each Engine shares a single router and host, you can compose logical appli
 
 ## Why Use Engines?
 
-
 The main reason to use engines is when you’re part of a large organization with many teams all contributing to one big application. Engines lets each team have their own area that is clearly separated from the others. There are [a variety of motivations](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md#motivation) for using Engines with Ember, but some of the more compelling reasons are:
 
 1. **Distributed development** - Engines can be developed and tested in isolation within their own Ember CLI projects and be included by applications or other engines. Engines can be packaged and released as addons themselves.
