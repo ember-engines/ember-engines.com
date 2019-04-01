@@ -73,15 +73,6 @@ ember install ember-engines
 
 A quick note, Engines should have `ember-engines` listed as a `devDependency` or `peerDependency`. The reason for this is that if you include `ember-engines` as a `dependency` of both the host application and the Engine, you'll wind up duplicating some crucial functionality which can cause problems. Therefore, it is best that the host application provide the copy to be used.
 
-Next, we need to install the proper version of Ember for use with ember-engines. Assuming you're on version `0.4.0` or higher, you'll want to make sure you use Ember `2.10.0` or greater:
-
-```bash
-rm -rf bower_components/ember
-bower install --save ember#^2.10.0
-```
-
-For other versions, check out the [compatibility information in the readme](https://github.com/ember-engines/ember-engines/blob/master/README.md#important-note-about-compatibility-and-stability).
-
 Finally, we need to ensure `ember-cli-htmlbars` is listed as a dependency for compiling our templates:
 
 ```json
