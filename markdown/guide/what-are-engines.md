@@ -14,7 +14,7 @@ Large companies are increasingly adopting Ember.js to power their entire product
 
 A more modular approach is to break off elements of a single application into separate addons. Addons are essentially mixins for [ember-cli](https://cli.emberjs.com/release/) applications. In other words, the elements of an addon are merged with those of the application that includes them. While addons allow for distributed development, testing, and packaging, they do not provide the logical run-time separation required for developing completely independent "sections" of an application. Addons must function within the namespace, registry, and router of the application in which they are included.
 
-Engines provide an alternative to these approaches that allows for distributed development, testing, and packaging. Also lets each team have their own area that is clearly separated from the others.
+Engines provide an alternative to these approaches that allows for distributed development, testing, and packaging. The goal of Ember Engines was to allow large Ember applications to be split into consumable Addons allowing development teams to build logically-grouped pieces of an application in separate repositories and mount each micro application as a route or container in a parent application.
 
 Basically these are the motivations for using Engines with Ember, but some of the more compelling reasons are:
 
