@@ -7,9 +7,12 @@
   "dependencies": {
     "ember-cli-babel": "*",
     "ember-cli-htmlbars": "*",
-    "liquid-fire": "*",
-    "ember-remarkable": "*",
-    "ember-fr-markdown-file": "*"
+    "ember-cli-showdown": "*",
+    "ember-auto-import": "*",
+    "ember-fr-markdown-file": "*",
+    "highlightjs": "*",
+    "showdown-highlight": "*",
+    "liquid-fire": "*"
   },
   "ember-addon": {
     "paths": [
