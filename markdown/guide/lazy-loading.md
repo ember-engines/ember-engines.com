@@ -116,7 +116,7 @@ isolation guarantees of engines.
 
  #### `/addon`
 
- JavaScript assets in this folder will be processed as per normal addon behavior
+JavaScript assets in this folder will be processed as per normal addon behavior
 except that they will end up inside of the `engine.js` file. Their module
 definition will be rooted to the engine name.
 
