@@ -33,7 +33,7 @@ Engines can exist in several phases:
 
  **Instantiated** - When an engine is instantiated, an `EngineInstance` is created and an engine's instance initializers are invoked. A routable engine is instantiated when a route is visited at or beyond its mount-point. A route-less engine is instantiated as soon as it is mounted.
 
-Special `before` and `after` hooks could be added to application instance initializers that allow them to be ordered relative to engine instance initializers.
+Special `before` and `after` hooks could be added to application instance initializers that allow them to be ordered relative to engine instance [initializers](https://guides.emberjs.com/release/applications/initializers/).
 
 ### Routable Engines
 
