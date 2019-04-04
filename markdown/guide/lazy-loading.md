@@ -111,7 +111,7 @@ relied upon as it may change in the future.
 
  #### `/app`
 
- Assets in this folder don't make sense and will be ignored as they break the
+ Assets in this folder don't make sense, it's a bad idea to use them because they break the
 isolation guarantees of engines.
 
  #### `/addon`
