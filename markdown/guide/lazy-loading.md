@@ -63,12 +63,9 @@ The loading and error substates work in a similar fashion to [substates in a nor
 
 ### Eager Engines
 
-Eager engines are built approximately the same as existing addons. Differences
-are limited to consolidating the namespace of `app` code inside of an engine.
-Into the engine's namespace instead of the host application.
+Eager engines are built approximately the same as existing addons. Differences are limited to consolidating the namespace of `app` code inside of an engine into the engine's namespace instead of the host application.
 
-Beyond that it adds in a configuration module for the engine, and nothing else. 
-It is a remarkably straightforward process.
+Beyond that it adds in a configuration module for the engine, and nothing else. It is a remarkably straightforward process.
 
  ### Lazy Engines
 
