@@ -6,11 +6,15 @@ function verifyExternalLink(assert, selector, href) {
   assert.equal(find(selector).href, href);
 }
 
+function verifyActiveLink(assert, selector) {
+  assert.ok(find(selector).classList.contains('active'));
+}
+
 module('Acceptance | main', function(hooks) {
   setupApplicationTest(hooks);
 
   test('index has proper navigation', async function(assert) {
-    assert.expect(3);
+    assert.expect(7);
 
     await visit('/');
 
@@ -20,6 +24,17 @@ module('Acceptance | main', function(hooks) {
     await click('.install-banner_action:nth-child(1)');
 
     assert.equal(currentURL(), '/guide');
+
+    // Verify content navigation
+    await click('.content-nav_link:nth-child(1)');
+
+     assert.equal(currentURL(), '/');
+    verifyActiveLink(assert, '.content-nav_link:nth-child(1)');
+    verifyExternalLink(assert, '.content-nav_link:nth-child(3)', 'https://github.com/ember-engines');
+
+     await click('.content-nav_link:nth-child(2)');
+
+     assert.equal(currentURL(), '/guide');
   });
 
   test('guide navigation works properly', async function(assert) {
