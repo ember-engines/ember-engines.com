@@ -28,13 +28,13 @@ module('Acceptance | main', function(hooks) {
     // Verify content navigation
     await click('.content-nav_link:nth-child(1)');
 
-     assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/');
     verifyActiveLink(assert, '.content-nav_link:nth-child(1)');
     verifyExternalLink(assert, '.content-nav_link:nth-child(3)', 'https://github.com/ember-engines');
 
-     await click('.content-nav_link:nth-child(2)');
+    await click('.content-nav_link:nth-child(2)');
 
-     assert.equal(currentURL(), '/guide');
+    assert.equal(currentURL(), '/guide');
   });
 
   test('guide navigation works properly', async function(assert) {
