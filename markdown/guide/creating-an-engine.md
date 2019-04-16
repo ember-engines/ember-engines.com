@@ -179,7 +179,7 @@ Observant developers might also note that Addon's have an `app` directory in add
 
 ### Adding Routes for Routable Engines
 
-At this point, if you're building a Route-less Engine, then you're done and can skip ahead to the "[Mounting An Engine](./mounting-engines.md)" section. If, however, you're building a Routable Engine, then you need to create one more file:
+At this point, if you're building a Route-less Engine, then you're done and can skip ahead to the "[Mounting An Engine](./mounting-engines)" section. If, however, you're building a Routable Engine, then you need to create one more file:
 
 ```bash
 touch addon/routes.js
