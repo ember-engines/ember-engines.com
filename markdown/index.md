@@ -24,4 +24,4 @@ The best way to get help for project-specific issues is via the [Ember Community
 
 ## Engines Roadmap
 
-Ember Engines are currently pre-1.0 software and under active development. The best way to stay informed on what's changing is to [watch the repo](https://github.com/ember-engines/ember-engines) and keep up-to-date with [Ember's RFCs](https://github.com/emberjs/rfcs/pulls).
+Ember Engines are currently pre-1.0 software and under active development. Check out our [roadmap to 1.0](https://discuss.emberjs.com/t/engines-1-0-roadmap/14914).
