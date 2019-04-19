@@ -22,7 +22,8 @@
     <a href="https://github.com/ember-engines" rel="noopener" target="_blank" class="content-nav_link">GitHub</a>
   </nav>
 
-  <div class="markdown">
-    {{md-text text=(fr-markdown-file "index") typographer=true}}
-  </div>
+  {{markdown-to-html
+    markdown=(fr-markdown-file "index")
+    extensions="highlight"
+    class="markdown" }}
 </section>
