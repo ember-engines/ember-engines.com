@@ -19,7 +19,7 @@ The Ember Engines Guides is a normal Ember application, so if you want to run it
 
 * Clone this repository
 * `cd ember-engines.com`
-* `npm install`
+* `yarn install`
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
