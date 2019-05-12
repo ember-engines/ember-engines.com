@@ -19,6 +19,10 @@ The easiest way to realise this is to define your models in a shared addon, whic
 
 ### Addon deduplication
 
+If you are using ember engines **v0.7.1 or bigger**: Use `EMBER_ENGINES_ADDON_DEDUPE` environment variable to deduplicate the nested addons of lazy engine which are also host app addons. More details at [#595](https://github.com/ember-engines/ember-engines/pull/595).
+
+If you are using ember engines **v0.7.0 or less**, follow the explanation bellow:
+
 ember-engines will automatically try to deduplicate addons used by your host app and (lazy loaded) engine(s). This means that addons that both the host app and an engine rely on, are only included in the vendor bundle of the host app. This ensures that you do not ship the addon code multiple times to your users.
 
 If addons are not included in the host app, they will be included in the engine's vendor bundle.
