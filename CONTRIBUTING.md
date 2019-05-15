@@ -1,6 +1,6 @@
 # Contributing
 
-We would love to have your help with writing the next version of the Ember Engines guides! As a work-in-progress, semi-greenfield project, it has different guidelines than other documentation projects. Once the project reaches MVP, these guidelines will change. Our target for MVP is the end of 2019.
+We would love to have your help with writing the next version of the Ember Engines guides! As a work-in-progress, semi-greenfield project, it has different guidelines than other documentation projects. Once the project reaches MVP, Ember Engines guides will change. Our target for MVP is the end of 2019.
 
 ## Ways to contribute
 
