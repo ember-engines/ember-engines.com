@@ -19,7 +19,7 @@ The easiest way to realise this is to define your models in a shared addon, whic
 
 ### Addon deduplication
 
-If you are using ember engines **v0.7.1 or bigger**: Use `EMBER_ENGINES_ADDON_DEDUPE` environment variable to deduplicate the nested addons of lazy engine which are also host app addons. More details at [#595](https://github.com/ember-engines/ember-engines/pull/595).
+If you are using ember engines **v0.7.1 or higher**: Use `EMBER_ENGINES_ADDON_DEDUPE` environment variable to deduplicate the nested addons of lazy engine which are also host app addons. More details at [#595](https://github.com/ember-engines/ember-engines/pull/595).
 
 If you are using ember engines **v0.7.0 or less**, follow the explanation bellow:
 
