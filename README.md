@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/ember-engines/ember-engines.com.svg?branch=master)](https://travis-ci.org/ember-engines/ember-engines.com)
 
-This repository holds the guides and tutorials for the [Ember Engines](https://github.com/ember-engines/ember-engines), a powerful addon that allow multiple logical applications to be composed together into a single application from the user's perspective.
+This repository holds the guides and tutorials for [Ember Engines](https://github.com/ember-engines/ember-engines), a powerful addon that allow multiple logical applications to be composed together into a single application from the user's perspective.
 
 ## Prerequisites
 
@@ -11,7 +11,6 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
 
 ## Local Development
 
