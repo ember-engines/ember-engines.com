@@ -24,6 +24,6 @@ The `generateURI` function receives the `filePath` for each asset and must retur
 
 ### Fastboot
 
-Ember Engines is perfect for combining with Server-side rendering solution and works with [FastBoot](https://ember-fastboot.com/) out of the box.
+Ember Engines is perfect for combining with server-side rendering solution and works with [FastBoot](https://ember-fastboot.com/) out of the box.
 
 All Engine builds (regardless of whether they are lazy-loaded or not) will generate a `engines-dist/engine-name/config/environment.js` file. This is because we need to load that file in FastBoot for both eager and lazy engines.
