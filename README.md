@@ -19,7 +19,7 @@ The Ember Engines Guides is a normal Ember application, so if you want to run it
 * Clone this repository
 * `cd ember-engines.com`
 * `yarn install`
-* `ember serve` or `PREMBER=true ember serve` (to enable [prember](https://github.com/ef4/prember))
+* `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
 If you then edit the Markdown files located in the `markdown/guide` folder your
