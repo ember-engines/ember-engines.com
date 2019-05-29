@@ -50,7 +50,7 @@
     "highlightjs": "^9.12.0",
     "liquid-fire": "^0.29.5",
     "loader.js": "^4.7.0",
-    "prember": "^1.0.2",
+    "prember": "^1.0.3",
     "qunit-dom": "^0.8.0",
     "sass": "^1.16.1",
     "showdown-highlight": "^2.1.3"
