@@ -12,6 +12,7 @@ To create an engine within an existing application's project, run the
 ```bash
 ember g in-repo-engine <engine-name>
 ```
+> Note: In-repo addons currently are created in the `/lib` directory (e.g. `/lib/my-addon`). Unit tests and integration tests are currently co-mingled with tests for the main application. A separate repo should be used for your engine if you wish to avoid this co-mingling.
 
 So, if we name our Engine `super-blog`, we just do the following:
 
