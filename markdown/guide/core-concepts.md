@@ -4,13 +4,13 @@ In addition to understanding what Engines are and how they differ from Applicati
 
 ### Addons & In-Repo-Addons
 
-As mentioned before, Engines are created as a specific type of [Ember Addon](https://ember-cli.com/extending/#developing-addons-and-blueprints). This makes sense given that Addons are Ember's way to easily share common or reusable code. Since Engines are intended to package logical applications that can be composed, they fit nicely into the paradigm of shareable addons.
+As mentioned before, Engines are created as a specific type of [Ember Addon](https://cli.emberjs.com/release/writing-addons/). This makes sense given that Addons are Ember's way to easily share common or reusable code. Since Engines are intended to package logical applications that can be composed, they fit nicely into the paradigm of shareable addons.
 
 Addons come in two distinct flavors: _Standard_ and _In-Repo_. Standard Addons (normally just referred to as Addons) are full-fledged NPM packages that can be distributed and installed in other Ember applications. In-repo-addons, on the other hand, live within the repository of an Ember Application and are only used by that specific application.
 
 This distinction is important for Engines, as it is fairly likely to want a logical application represented by an Engine but only use it with a specific Ember Application. In those cases, using an in-repo-engine is a good alternative to consider instead of maintaining two separate repositories.
 
-It is recommended to read through the "[Writing Addons](https://cli.emberjs.com/release/writing-addons/)" portion of the Ember-CLI user guide before moving onto the "[Creating An Engine](./creating-an-engine.md)" portion of the guide.
+It is recommended to read through the "[Writing Addons](https://cli.emberjs.com/release/writing-addons/)" portion of the Ember-CLI user guide before moving onto the "[Creating An Engine](./creating-an-engine)" portion of the guide.
 
 ### Isolation & Dependencies
 

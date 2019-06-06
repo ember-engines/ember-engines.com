@@ -9,9 +9,10 @@ As discussed previously, Engines are distributed as Addons and In-Repo-Addons.
 To create an engine within an existing application's project, run the
 `in-repo-engine` generator:
 
-```
+```bash
 ember g in-repo-engine <engine-name>
 ```
+> Note: In-repo addons currently are created in the `/lib` directory (e.g. `/lib/my-addon`). Unit tests and integration tests are currently co-mingled with tests for the main application. A separate repo should be used for your engine if you wish to avoid this co-mingling.
 
 So, if we name our Engine `super-blog`, we just do the following:
 
@@ -22,6 +23,25 @@ ember g in-repo-engine super-blog
 This has added a directory named `lib` and an app addon directory structure named for `super-blog`.
 
 Using the blueprint in-repo-engine, ember-cli has added all the appropriate files to create a new app structure.
+
+If you want to share elements between an in-repo engine and application, you could do so with an in-repo addon. For example, the following in-repo engine's package (`lib/super-blog/package.json`) references the `common` in-repo addon:
+
+```json
+{
+  "name": "super-blog",
+
+  "dependencies": {
+    "ember-cli-htmlbars": "*",
+    "ember-cli-babel": "*"
+  },
+
+  "ember-addon": {
+    "paths": [
+      "../common"
+    ]
+  }
+}
+```
 
 ### Create as Addon
 
@@ -52,15 +72,6 @@ ember install ember-engines
 ```
 
 A quick note, Engines should have `ember-engines` listed as a `devDependency` or `peerDependency`. The reason for this is that if you include `ember-engines` as a `dependency` of both the host application and the Engine, you'll wind up duplicating some crucial functionality which can cause problems. Therefore, it is best that the host application provide the copy to be used.
-
-Next, we need to install the proper version of Ember for use with ember-engines. Assuming you're on version `0.4.0` or higher, you'll want to make sure you use Ember `2.10.0` or greater:
-
-```bash
-rm -rf bower_components/ember
-bower install --save ember#^2.10.0
-```
-
-For other versions, check out the [compatibility information in the readme](https://github.com/ember-engines/ember-engines/blob/master/README.md#important-note-about-compatibility-and-stability).
 
 Finally, we need to ensure `ember-cli-htmlbars` is listed as a dependency for compiling our templates:
 
@@ -170,7 +181,7 @@ Observant developers might also note that Addon's have an `app` directory in add
 
 ### Adding Routes for Routable Engines
 
-At this point, if you're building a Route-less Engine, then you're done and can skip ahead to the "[Mounting An Engine](./mounting-engines.md)" section. If, however, you're building a Routable Engine, then you need to create one more file:
+At this point, if you're building a Route-less Engine, then you're done and can skip ahead to the "[Mounting An Engine](./mounting-engines)" section. If, however, you're building a Routable Engine, then you need to create one more file:
 
 ```bash
 touch addon/routes.js
@@ -186,7 +197,7 @@ export default buildRoutes(function() {
 });
 ```
 
-The callback passed to `buildRoutes` functions the same way as [`Router#map`](http://emberjs.com/api/classes/Ember.Router.html#method_map) does in a normal application. This means, the `routes.js` file for our `super-blog` might look something like:
+The callback passed to `buildRoutes` functions the same way as [`Router#map`](https://api.emberjs.com/ember/release/classes/EmberRouter) does in a normal application. This means, the `routes.js` file for our `super-blog` might look something like:
 
 ```js
 import buildRoutes from 'ember-engines/routes';

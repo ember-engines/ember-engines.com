@@ -23,6 +23,18 @@ Anyway, let's add something super simple to our template:
 
 Now we'll be able to verify that our Engine renders when we mount it.
 
+### Loading phases
+
+Engines can exist in several phases:
+
+ **Booted** - an engine that's been installed in a parent application will have its dependencies loaded and its (non-instance) initializers invoked when the parent application boots.
+
+ **Mounted** - Routable and route-less engines have slightly different concepts of "mounting". A routable engine is considered mounted when it has been included by a router at one or more mount-points. A route-less engine is considered mounted as soon as a route's `mount` call resolves.
+
+ **Instantiated** - When an engine is instantiated, an `EngineInstance` is created and an engine's instance initializers are invoked. A routable engine is instantiated when a route is visited at or beyond its mount-point. A route-less engine is instantiated as soon as it is mounted.
+
+Special `before` and `after` hooks could be added to application instance initializers that allow them to be ordered relative to engine instance [initializers](https://guides.emberjs.com/release/applications/initializers/).
+
 ### Routable Engines
 
 The technique to mount an Engine into your application varies by the type of Engine you're using. We'll cover routable Engines first.

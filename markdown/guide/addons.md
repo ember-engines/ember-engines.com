@@ -19,9 +19,13 @@ The easiest way to realise this is to define your models in a shared addon, whic
 
 ### Addon deduplication
 
+If you are using ember engines **v0.7.1 or higher**: Use `EMBER_ENGINES_ADDON_DEDUPE` environment variable to deduplicate the nested addons of lazy engine which are also host app addons. More details at [#595](https://github.com/ember-engines/ember-engines/pull/595).
+
+If you are using ember engines **v0.7.0 or less**, follow the explanation bellow:
+
 ember-engines will automatically try to deduplicate addons used by your host app and (lazy loaded) engine(s). This means that addons that both the host app and an engine rely on, are only included in the vendor bundle of the host app. This ensures that you do not ship the addon code multiple times to your users.
 
-If addons are not included in the host app, they will be included in the engine's vendor bundle. 
+If addons are not included in the host app, they will be included in the engine's vendor bundle.
 
 Note that the deduplication between host app and addon depends on the `cacheKeyForTree()` method of the addon. It will only deduplicate if the cache key returned by that method is the same. This will by default be the case, unless the addon provides a custom `treeForAddon()` hook. If that is the case, the addon should provide a custom `cacheKeyForTree()` method that returns a static key - for example:
 
@@ -44,6 +48,16 @@ module.exports = {
   }
 };
 ```
+
+Isolation and separation of responsibilities is generally hard to solve. The most recurrent scenario in a composable app with Ember Engines is: `Imagine the css or components that are only used by engine-a, engine-b and engine-c`  all possible cases have down sides here:
+
+ 1) Include shared deps into the host app - Downside: Increases initial bundle size.
+
+ 2) Include shared deps into each engine bundle - Downside: Duplicated stuff in multiple engine bundles.
+
+ 3) Somehow split out shared deps into dedicated bundles `(e.g. /engine-assets/shared-by-a-and-b.js)` - Downside: You might end up with 20 bundles `(e.g. shared-by-a-and-b, shared-by-b-and-c-, shared-by-a-b-and-c, ...)`, and it is probably pretty complicated from a built step perspective.
+
+Engines currently take the second approach, but may allow more options in the future.
 
 ### Managing multiple addon versions
 
