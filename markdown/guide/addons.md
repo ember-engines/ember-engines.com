@@ -57,7 +57,7 @@ Isolation and separation of responsibilities is generally hard to solve. The mos
 
  3) Somehow split out shared deps into dedicated bundles `(e.g. /engine-assets/shared-by-a-and-b.js)` - Downside: You might end up with 20 bundles `(e.g. shared-by-a-and-b, shared-by-b-and-c-, shared-by-a-b-and-c, ...)`, and it is probably pretty complicated from a built step perspective.
 
-The **case 2** is currently the best approach.
+Engines currently take the second approach, but may allow more options in the future.
 
 ### Managing multiple addon versions
 
