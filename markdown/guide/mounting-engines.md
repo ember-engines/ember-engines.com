@@ -6,7 +6,7 @@ Now that we have our Engine created, we need to "mount" it in our application so
 
 In order to actually verify that our Engine renders properly, we need to add a template.
 
-```bash
+```shell
 mkdir addon/templates
 touch addon/templates/application.hbs
 ```

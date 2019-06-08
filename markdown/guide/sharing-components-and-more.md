@@ -11,7 +11,7 @@ However, there are use cases for needing to share components and more across Eng
 In order to use things like Components and Helpers from addons in your Engine, they will need to be present in your Engine's namespace. This is accomplished by doing what is called a "re-export":
 
 ```js
-//super-blog/addon/components/foo-bar.js
+//super-blog/app/components/foo-bar.js
 export { default } from 'super-addon/components/foo-bar';
 ```
 
