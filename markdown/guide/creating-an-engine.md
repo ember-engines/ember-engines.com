@@ -9,14 +9,14 @@ As discussed previously, Engines are distributed as Addons and In-Repo-Addons.
 To create an engine within an existing application's project, run the
 `in-repo-engine` generator:
 
-```bash
+```shell
 ember g in-repo-engine <engine-name>
 ```
 > Note: In-repo addons currently are created in the `/lib` directory (e.g. `/lib/my-addon`). Unit tests and integration tests are currently co-mingled with tests for the main application. A separate repo should be used for your engine if you wish to avoid this co-mingling.
 
 So, if we name our Engine `super-blog`, we just do the following:
 
-```bash
+```shell
 ember g in-repo-engine super-blog
 ```
 
@@ -47,13 +47,13 @@ If you want to share elements between an in-repo engine and application, you cou
 
 Separate addon projects can be created with the addon command:
 
-```bash
+```shell
 ember addon <engine-name>
 ```
 
 So, if we name our Engine `chat-engine`, we just do the following:
 
-```bash
+```shell
 ember addon chat-engine
 ```
 
@@ -66,7 +66,7 @@ At this point, you have a vanilla Addon which is not yet an Engine, so let's int
 
 First, we need to install the `ember-engines` addon, which provides support for all the Engines features which haven't been accepted into Ember core yet. Installation is as simple as:
 
-```bash
+```shell
 cd super-blog/
 ember install ember-engines
 ```
@@ -124,7 +124,7 @@ module.exports = function(environment) {
 
 Finally, to make this addon an actual Engine, create a `engine.js` file under the `addon` directory:
 
-```bash
+```shell
 touch addon/engine.js
 ```
 
@@ -183,7 +183,7 @@ Observant developers might also note that Addon's have an `app` directory in add
 
 At this point, if you're building a Route-less Engine, then you're done and can skip ahead to the "[Mounting An Engine](./mounting-engines)" section. If, however, you're building a Routable Engine, then you need to create one more file:
 
-```bash
+```shell
 touch addon/routes.js
 ```
 
