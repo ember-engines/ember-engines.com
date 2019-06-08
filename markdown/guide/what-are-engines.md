@@ -1,27 +1,40 @@
-## What Are Engines?
+## What are Engines?
 
-While a lot of developers may have heard the term "Engine", there is often a lot of unfamiliarity with what that term actually means. So, let us take a moment and make sure we are all on the same page before diving into building an Engine.
+Engines can be considered miniature applications that provide functionality to their host applications. Engines are isolated, `composable applications`, they have almost all the same features as normal Ember applications, except an [Engine](https://api.emberjs.com/ember/release/classes/Engine) requires a host application to boot it and provide a Router instance.
 
-### What Engines Are Conceptually
+"Engines allow multiple logical applications to be composed together into a single application from the user's perspective." - [Engines Guides](http://ember-engines.com/)
 
-The summary from the [Engines RFC](https://github.com/emberjs/rfcs/blob/master/text/0010-engines.md) states that Engines are constructs that:
-
-> ...allow multiple logical applications to be composed together into a single application from the user's perspective.
-
-The key term here is "logical application". That is, an Engine represents a set of functionality and user experiences that could logically be considered an application. However, they differ from normal Ember applications in that they are intended to be composed within a parent application in order to create a single, cohesive user experience.
-
-The oft used example of this is a "blogging" application. While a blog itself could be a full-fledged application, you may also wish to use it as a specific subsection of your overall application. If you threw a "news feed" engine into that mix, you might get an application structure that looks something like this:
+The often used example of this is a "blogging" application. While a blog itself could be a full-fledged application, you may also wish to use it as a specific subsection of your overall application. If you threw a "news feed" engine into that mix, you might get an application structure that looks something like this:
 
 ![Diagram of Application with two Engines](../images/02-app-diagram.png)
 
 Even though the application has sets of functionality represented by Engines, there is room for some additional functionality that the host application itself provides.
 
-### How Engines Differ From Applications
+## Why use Engines?
 
-Now that we can understand what Engines represent conceptually (that is, "logical applications"), let's talk about the concrete differences between Applications and Engines. Again, from the Engines RFC:
+Large companies are increasingly adopting Ember.js to power their entire product lines. Often this means separate teams (sometimes distributed around the world) working on the same app. Typically, responsibility is shared by dividing the application into one or more "sections". How this division is actually implemented varies from team to team. 
 
-> The primary differences [between Applications and Engines] are that an engine does not boot itself and an engine does not control the router.
+These companies also have large monolithic applications, which pose the following challenges:
 
-Other than those two differences, Engines are remarkably similar to Applications; they have their own container, registry, context, and namespace. We'll dive into those aspects more later, but for now it is important to understand that Engines are more-or-less just applications that need a "host" to boot them up and handle routing. In fact, you can think of an Application as a specific type of Engine that adds in the above features.
+* `Side effects` - if you change something, it may be unclear how it could affect the rest of platform.
+* `Coordination` - when you develop a new feature or make big changes, many teams may need to be in sync to approve it.
+* `Complexity` - with a huge dependency tree and many layers of abstraction, developers cannot iterate quickly, and features suffer as a result.
+* `Killing Innovation` - a/b testing a cutting-edge feature is hard to do without disrupting the rest of the app and the teams working on it.
+* `Slow Onboarding` - new people coming into the team are overwhelmed.
 
-In addition to the two differences above, which are primarily concerned with runtime behavior, there is also a build time difference to keep in mind. That is, Engines are packaged and distributed as Ember-CLI Addons and not as Ember-CLI Applications. We'll cover what that means for developers more later on.
+Engines provide an alternative to these approaches that allows for distributed development, testing, and packaging. The goal of Ember Engines was to allow large Ember applications to be split into consumable Addons allowing development teams to build logically-grouped pieces of an application.
+
+Engines are good for companies that have a large number of teams, where each team has their own area that is clearly separated from the others. If your app is developed by a small team, engines are probably not very helpful for you. The isolation is good when it matches organizational boundaries, but adds unnecessary complexity when there is not a good match.
+
+If you are considering splitting up your application into engines just to reduce the amount of data that needs to be initially downloaded and increase the performance, Engines are not the right solution. Please check out the section on tree shaking and code splitting in projects like [Embroider](https://github.com/embroider-build/embroider).
+
+### Additional Resources
+
+- [Ember Engines on GitHub](https://github.com/ember-engines/ember-engines)
+- [Engines RFC](https://github.com/emberjs/rfcs/pull/10)
+- [Engine Linking RFC](https://github.com/emberjs/rfcs/pull/122)
+- [Ember Asset Loader on GitHub](https://github.com/ember-engines/ember-asset-loader)
+- [Asset Manifest RFC](https://github.com/emberjs/rfcs/pull/153)
+- [Asset Loader Service RFC](https://github.com/emberjs/rfcs/pull/158)
+
+_Note: this guide is accurate as of the 0.7.x release of ember-engines_.
