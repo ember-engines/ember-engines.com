@@ -18,7 +18,7 @@ import engineResolverFor from 'ember-engines/test-support/engine-resolver-for';
 ### Unit/Integration Testing
 
 
-To test components declared inside an in-repo engine, you need to set a custom resolver with the engine's prefix.
+To test candidates for unit/integration (e.g. components, services and controllers) declared inside an engine, you need to set a custom resolver with the engine's prefix using `engineResolverFor` helper.
 
 Assuming that we have an `in-repo-engine or engine as addon` called `admin-app` and it has a component `hello-name` and service `some-thing`. The following would be the setup to test such component from the `<app-name>` (host app or dummy app):
 
