@@ -8,7 +8,7 @@
 
 Ember Engines comes with a **set of test helpers that can be used in Unit/Integration tests**:
 
-`engineResolverFor` gets the resolver class used by an Engine and creates an instance to be used with test modules
+`engineResolverFor` gets the resolver class used by an Engine and creates an instance to be used with test modules:
 
 ```js
 // tests/<integration or unit>/…
