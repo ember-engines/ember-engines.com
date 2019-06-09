@@ -1,6 +1,6 @@
 ## Testing Engines
 
-> in-repo-engine & in-repo-addon doesn't have support to separate tests. If you want to create a separation of concerns between the app and your engine, to extract this into a normal addon.
+> The in-repo-engine & in-repo-addon don't have support for separate tests. If you want to create a separation of concerns between the app and your engine, extract the functionality into a normal addon.
 
 * for test an `in-repo-engine` we must setup the tests from the host app
 
