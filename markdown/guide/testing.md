@@ -104,7 +104,7 @@ module('Integration | Component | hello-name', function(hooks) {
 
 #### Acceptance Testing
 
-Supposing that we are mouting `admin-app` on host-app router
+Suppose that we are mouting `admin-app` on host-app router:
 
 ```js
 // host-app/app/router.js
