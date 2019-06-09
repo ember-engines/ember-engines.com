@@ -73,7 +73,7 @@ Next, suppose that our engine has a component:
 Hello, {{name}}!
 ```
 
-The integration test will be like this:
+Here is what the integration test for that component might look:
 
 ```js
 // <app-name>/tests/integration/components/hello-name-test.js
