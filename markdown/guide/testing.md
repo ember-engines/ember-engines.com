@@ -99,9 +99,6 @@ module('Integration | Component | hello-name', function(hooks) {
 });
 ```
 
-**Note: you could create a helper and then use it like `Resolver from ../helpers/admin-app/resolver`**
-
-
 #### Acceptance Testing
 
 Suppose that we are mouting `admin-app` on host-app router:
@@ -123,7 +120,7 @@ Router.map(function() {
 export default Router;
 ```
 
-The acceptance test will be like this:
+Here is an acceptance test for routing::
 
 ```js
 
