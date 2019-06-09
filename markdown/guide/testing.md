@@ -4,7 +4,7 @@
 
 * To test an `in-repo-engine`, we must set up the tests from the host app
 
-* for test an `engine as addon` we must setup the tests from the dummy app
+* To test an `engine as an addon`, we must set up the tests from the dummy app
 
 Ember Engines comes with a **set of test helpers that can be used in Unit/Integration tests**:
 
