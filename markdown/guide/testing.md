@@ -66,7 +66,7 @@ module('Unit | Service | some thing', function(hooks) {
 
 #### Testing Components
 
-Supposing that we have in the engine this component
+Next, suppose that our engine has a component:
 
 ```hbs
 {{!--  admin-app/addon/components/hello-name.hbs --}}
