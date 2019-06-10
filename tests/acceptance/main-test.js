@@ -37,13 +37,13 @@ module('Acceptance | main', function(hooks) {
 
     await click('.toc_item:first-child > .toc_link');
 
-    assert.equal(currentURL(), '/guide/what-are-engines');
+    assert.equal(currentURL(), '/guide/introduction');
     assert.notOk(find('.pagination_prev'));
     assert.ok(find('.pagination_next'));
 
     await click('.pagination_next');
 
-    assert.equal(currentURL(), '/guide/core-concepts');
+    assert.equal(currentURL(), '/guide/what-are-engines');
     assert.ok(find('.pagination_prev'));
     assert.ok(find('.pagination_next'));
 
