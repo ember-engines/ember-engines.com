@@ -29,14 +29,3 @@ Engines are good for companies that have a large number of teams, where each tea
 Engines are used by a number of companies, including [LinkedIn](linkedin.com), [Chase](https://www.chase.com/) and [Square](https://squareup.com) in production sites with million of users.
 
 If you are considering splitting up your application into engines just to reduce the amount of data that needs to be initially downloaded and increase the performance, Engines are not the right solution. Please check out the section on tree shaking and code splitting in projects like [Embroider](https://github.com/embroider-build/embroider).
-
-### Additional Resources
-
-- [Ember Engines on GitHub](https://github.com/ember-engines/ember-engines)
-- [Engines RFC](https://github.com/emberjs/rfcs/pull/10)
-- [Engine Linking RFC](https://github.com/emberjs/rfcs/pull/122)
-- [Ember Asset Loader on GitHub](https://github.com/ember-engines/ember-asset-loader)
-- [Asset Manifest RFC](https://github.com/emberjs/rfcs/pull/153)
-- [Asset Loader Service RFC](https://github.com/emberjs/rfcs/pull/158)
-
-_Note: this guide is accurate as of the 0.7.x release of ember-engines_.

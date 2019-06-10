@@ -12,3 +12,18 @@
     <a href="https://github.com/ember-engines" rel="noopener" target="_blank" class="install-banner_action">GitHub</a>
   </div>
 </header>
+
+<section class="content">
+  <h2 class="content_title"><span>Ember</span> Engines</h2>
+
+  <nav class="content-nav">
+    {{#link-to "index" class="content-nav_link"}}Intro{{/link-to}}
+    {{#link-to "guide" class="content-nav_link"}}Guide{{/link-to}}
+    <a href="https://github.com/ember-engines" rel="noopener" target="_blank" class="content-nav_link">GitHub</a>
+  </nav>
+
+  {{markdown-to-html
+    markdown=(fr-markdown-file "index")
+    extensions="highlight"
+    class="markdown" }}
+</section>
