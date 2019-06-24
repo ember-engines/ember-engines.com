@@ -142,7 +142,7 @@ module('basic acceptance test', function(hooks) {
 
 ### Testing for Lazy Engines
 
-If you have a lazy engine, you'll need to edit your `tests/test-helper.js` like this:
+If you have a lazy engine, you'll need to ensure that your `tests/test-helper.js` is configured to preload your engine's assets:
 
 ```js
 import Application from '../app';
