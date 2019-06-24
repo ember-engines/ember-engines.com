@@ -157,4 +157,4 @@ setApplication(Application.create(config.APP));
 preloadAssets(manifest).then(start); // This ensures all engine resources are loaded before the tests
 ```
 
-This should be enough to make unit, integration & acceptance tests work.
+This should be sufficient to make unit, integration, and acceptance tests work.
