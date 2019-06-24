@@ -1,8 +1,6 @@
 ## What are Engines?
 
-Engines can be considered miniature applications that provide functionality to their host applications. Engines are isolated, `composable applications`, they have almost all the same features as normal Ember applications, except an [Engine](https://api.emberjs.com/ember/release/classes/Engine) requires a host application to boot it and provide a Router instance.
-
-"Engines allow multiple logical applications to be composed together into a single application from the user's perspective." - [Engines Guides](http://ember-engines.com/)
+Engines allow multiple logical applications to be composed together into a single application from the user's perspective, that provide functionality to their host applications. Engines are isolated, `composable applications`, they have almost all the same features as normal Ember applications, except an [Engine](https://api.emberjs.com/ember/release/classes/Engine) requires a host application to boot it and provide a Router instance.
 
 The often used example of this is a "blogging" application. While a blog itself could be a full-fledged application, you may also wish to use it as a specific subsection of your overall application. If you threw a "news feed" engine into that mix, you might get an application structure that looks something like this:
 
@@ -24,7 +22,7 @@ Maintaining large monolithic applications poses the following challenges:
 
 Engines provide an antidote to these problems by allowing for distributed development, testing, and packaging of logically-grouped pieces of an application.
 
-Engines are good for companies that have a large number of teams, where each team has their own area that is clearly separated from the others. If your app is developed by a small team, engines are probably not very helpful for you. The isolation is good when it matches organizational boundaries, but adds unnecessary complexity when there is not a good match.
+Engines are good for organizations that have multiple teams, where each team has their own area that is clearly separated from the others. The isolation is good when it matches organizational boundaries, but adds unnecessary complexity when there is not a good match.
 
 Engines are used by a number of organizations, including [LinkedIn](linkedin.com), [Chase](https://www.chase.com/), and [Square](https://squareup.com), to power sites with million of users.
 
