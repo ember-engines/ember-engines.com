@@ -24,7 +24,7 @@ What does it look like to test a component from a host app or dummy app? Let's g
 
 #### Unit Testing Basics
 
-Supposing that we have in the engine a service that has a `computedFoo` computed property based on a `foo` property.
+Suppose that we have in the engine a service that has a `computedFoo` computed property based on a `foo` property.
 
 ```js
 // admin-app/services/some-thing-test.js
