@@ -22,7 +22,7 @@ These companies also have large monolithic applications, which pose the followin
 * `Killing Innovation` - a/b testing a cutting-edge feature is hard to do without disrupting the rest of the app and the teams working on it.
 * `Slow Onboarding` - new people coming into the team are overwhelmed.
 
-Engines provide an alternative to these approaches that allows for distributed development, testing, and packaging. The goal of Ember Engines was to allow large Ember applications to be split into consumable Addons allowing development teams to build logically-grouped pieces of an application.
+Engines provide an antidote to these problems by allowing for distributed development, testing, and packaging of logically-grouped pieces of an application.
 
 Engines are good for companies that have a large number of teams, where each team has their own area that is clearly separated from the others. If your app is developed by a small team, engines are probably not very helpful for you. The isolation is good when it matches organizational boundaries, but adds unnecessary complexity when there is not a good match.
 
