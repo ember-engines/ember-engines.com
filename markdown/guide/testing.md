@@ -120,7 +120,7 @@ Router.map(function() {
 export default Router;
 ```
 
-Here is an acceptance test for routing::
+Here is an acceptance test for routing:
 
 ```js
 
