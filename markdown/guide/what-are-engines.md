@@ -8,7 +8,7 @@ The often used example of this is a "blogging" application. While a blog itself 
 
 ![Diagram of Application with two Engines](../images/02-app-diagram.png)
 
-Even though the application has sets of functionality represented by Engines, there is room for some additional functionality that the host application itself provides.
+This host application relies upon Engines to control different "zones" of functionality. However, from the user's perspective, the host application and its engines appear to be a single application.
 
 ## Why use Engines?
 
