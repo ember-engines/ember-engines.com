@@ -1,6 +1,6 @@
 ## What are Engines?
 
-Engines allow multiple logical applications to be composed together into a single application from the user's perspective, that provide functionality to their host applications. Engines are isolated, `composable applications`, they have almost all the same features as normal Ember applications, except an [Engine](https://api.emberjs.com/ember/release/classes/Engine) requires a host application to boot it and provide a Router instance.
+Engines allow multiple logical applications to be composed together into a single application from the user's perspective. Engines are isolated and composable and share many features with normal Ember applications. A notable exception is that an [Engine](https://api.emberjs.com/ember/release/classes/Engine) requires a host application to boot it and provide a `Router` instance.
 
 The often used example of this is a "blogging" application. While a blog itself could be a full-fledged application, you may also wish to use it as a specific subsection of your overall application. If you threw a "news feed" engine into that mix, you might get an application structure that looks something like this:
 
