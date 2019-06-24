@@ -14,7 +14,7 @@ Even though the application has sets of functionality represented by Engines, th
 
 Large organizations often use Ember.js to power sophisticated web applications. These apps may require collaboration among several teams, sometimes distributed around the world. Typically, responsibility is shared by dividing the application into one or more "sections". How this division is actually implemented varies from team to team. 
 
-These companies also have large monolithic applications, which pose the following challenges:
+Maintaining large monolithic applications poses the following challenges:
 
 * `Side effects` - if you change something, it may be unclear how it could affect the rest of platform.
 * `Coordination` - when you develop a new feature or make big changes, many teams may need to be in sync to approve it.
