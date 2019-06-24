@@ -20,14 +20,14 @@ import engineResolverFor from 'ember-engines/test-support/engine-resolver-for';
 
 To test candidates for unit/integration (e.g. components, services and controllers) declared inside an engine, you need to set a custom resolver with the engine's prefix using `engineResolverFor` helper.
 
-What does it look like to test a component from a host app or dummy app? Let's go over some examples in the next section. In the following tests, `admin-app` is an `in-repo-engine` or `engine as addon`, `hello-name` is a component, and `some-thing` is a service.
+What does it look like to test a component from a host app or dummy app? Let's go over some examples in the next section. In the following tests, `admin-engine` is an `in-repo-engine` or `engine addon`, `hello-name` is a component, and `some-thing` is a service.
 
 #### Unit Testing Basics
 
 Suppose that we have in the engine a service that has a `computedFoo` computed property based on a `foo` property.
 
 ```js
-// admin-app/services/some-thing-test.js
+// admin-engine/services/some-thing-test.js
 import Service from '@ember/service';
 import { computed } from '@ember/object';
 
@@ -49,7 +49,7 @@ import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 import engineResolverFor from 'ember-engines/test-support/engine-resolver-for';
 
-const modulePrefix = 'admin-app';
+const modulePrefix = 'admin-engine';
 const resolver = engineResolverFor(modulePrefix);
 
 module('Unit | Service | some thing', function(hooks) {
@@ -69,7 +69,7 @@ module('Unit | Service | some thing', function(hooks) {
 Next, suppose that our engine has a component:
 
 ```hbs
-{{!--  admin-app/addon/components/hello-name.hbs --}}
+{{!--  admin-engine/addon/components/hello-name.hbs --}}
 Hello, {{name}}!
 ```
 
@@ -84,7 +84,7 @@ import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import engineResolverFor from 'ember-engines/test-support/engine-resolver-for';
 
-const modulePrefix = 'admin-app';
+const modulePrefix = 'admin-engine';
 const resolver = engineResolverFor(modulePrefix);
 
 module('Integration | Component | hello-name', function(hooks) {
@@ -101,7 +101,7 @@ module('Integration | Component | hello-name', function(hooks) {
 
 #### Acceptance Testing
 
-Suppose that we are mouting `admin-app` on host-app router:
+Suppose that we are mouting `admin-engine` on host-app router:
 
 ```js
 // host-app/app/router.js
