@@ -12,7 +12,7 @@ Even though the application has sets of functionality represented by Engines, th
 
 ## Why use Engines?
 
-Large companies are increasingly adopting Ember.js to power their entire product lines. Often this means separate teams (sometimes distributed around the world) working on the same app. Typically, responsibility is shared by dividing the application into one or more "sections". How this division is actually implemented varies from team to team. 
+Large organizations often use Ember.js to power sophisticated web applications. These apps may require collaboration among several teams, sometimes distributed around the world. Typically, responsibility is shared by dividing the application into one or more "sections". How this division is actually implemented varies from team to team. 
 
 These companies also have large monolithic applications, which pose the following challenges:
 
