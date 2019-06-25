@@ -6,7 +6,7 @@ On a technical level, engines and applications are remarkably similar: they each
 
 The often used example of this is a "blogging" application. While a blog itself could be a full-fledged application, you may also wish to use it as a specific subsection of your overall application. If you threw a "news feed" engine into that mix, you might get an application structure that looks something like this:
 
-![Diagram of Application with two Engines](../images/02-app-diagram.png)
+![Diagram of Application with two Engines](/images/02-app-diagram.png)
 
 This host application relies upon Engines to control different "zones" of functionality. However, from the user's perspective, the host application and its engines appear to be a single application.
 
