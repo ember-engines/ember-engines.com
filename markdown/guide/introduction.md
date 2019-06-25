@@ -26,4 +26,4 @@ Ember Engines are currently pre-1.0 software and under active development. Check
 - [Asset Manifest RFC](https://github.com/emberjs/rfcs/pull/153)
 - [Asset Loader Service RFC](https://github.com/emberjs/rfcs/pull/158)
 
-_Note: this guide is accurate as of the 0.7.x release of ember-engines_.
+_Note: this guide is accurate as of the 0.8.x release of ember-engines_.
