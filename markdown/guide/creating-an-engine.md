@@ -212,5 +212,9 @@ export default buildRoutes(function() {
   });
 });
 ```
+To create a route within an in-repo-engine, you can run
+```shell
+ember generate route <route-name> --in-repo <in-repo-name>
+``` 
 
 In the next section, we'll see how this route map gets merged into the host route map. So, let's go!
