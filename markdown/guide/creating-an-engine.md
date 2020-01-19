@@ -207,6 +207,18 @@ lib/foo/addon/components/awesome-sauce.js
 lib/foo/addon/templates/components/awesome-sauce.hbs
 tests/integration/components/awesome-sauce-test.js
 ```
+#### Remove from in-repo engines
+For removing the above generated routes (components and other things) from your engine, replace `generate` with `destroy` in the shell command
+
+Removing a route from an in-repo engine: 
+```shell
+ember destroy route <route-name> --in-repo <in-repo-name>
+``` 
+
+Removing a component from an in-repo engine: 
+```shell
+ember destroy component <component-name> --in-repo <in-repo-name>
+``` 
 
 ---
 
