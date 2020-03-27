@@ -4,10 +4,12 @@
   "private": true,
   "description": "The official website for Ember Engines",
   "repository": "https://github.com/ember-engines/ember-engines.com",
+  "homepage": "ember-engines.com",
   "license": "MIT",
   "author": "",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-engines"
   ],
   "scripts": {
     "build": "ember build --environment=production",
@@ -66,6 +68,5 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "homepage": "https://ember-engines.github.io/ember-engines.com"
+  }
 }
