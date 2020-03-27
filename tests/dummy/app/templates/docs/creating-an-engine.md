@@ -43,6 +43,47 @@ If you want to share elements between an in-repo engine and application, you cou
 }
 ```
 
+### Generate in an In-Repo-Engine
+
+Using the right flags, generating routes, components (etc) in an in-repo engine is the same as in a regular Ember application.
+
+To create a route within an in-repo-engine, you can run:
+```shell
+ember generate route <route-name> --in-repo <in-repo-name>
+```
+
+To create a component within an in-repo-engine, you can run:
+```shell
+ember generate component <component-name> --in-repo <in-repo-name>
+```
+
+To generate helpers, controllers and other things, you can use the `--in-repo` flag like above.
+
+### Using the --in flag
+As of ember-cli@3.7 and higher the generate command includes an `--in` flag that allows you to specify the directory to generate into.
+For example, given an in-repo addon at lib/my-foo/:
+```shell
+ember generate component awesome-sauce --in ./lib/foo
+```
+Will generate the following files:
+```shell
+lib/foo/addon/components/awesome-sauce.js
+lib/foo/addon/templates/components/awesome-sauce.hbs
+tests/integration/components/awesome-sauce-test.js
+```
+### Remove from In-Repo-Engine
+For removing the above generated routes (components and other things) from your engine, replace `generate` with `destroy` in the shell command
+
+Removing a route from an in-repo engine:
+```shell
+ember destroy route <route-name> --in-repo <in-repo-name>
+```
+
+Removing a component from an in-repo engine:
+```shell
+ember destroy component <component-name> --in-repo <in-repo-name>
+```
+
 ## Create as Addon
 
 Separate addon projects can be created with the addon command:
@@ -71,7 +112,7 @@ cd super-blog/
 ember install ember-engines
 ```
 
-A quick note, Engines should have `ember-engines` listed as a `devDependency` or `peerDependency`. The reason for this is that if you include `ember-engines` as a `dependency` of both the host application and the Engine, you'll wind up duplicating some crucial functionality which can cause problems. Therefore, it is best that the host application provide the copy to be used.
+A quick note, Engines should have `ember-engines` listed as a `devDependency` and `peerDependency`. The reason for this is that if you include `ember-engines` as a `dependency` of both the host application and the Engine, you'll wind up duplicating some crucial functionality which can cause problems. Therefore, it is best that the host application provide the copy to be used.
 
 Finally, we need to ensure `ember-cli-htmlbars` is listed as a dependency for compiling our templates:
 

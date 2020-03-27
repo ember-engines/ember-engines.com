@@ -67,7 +67,7 @@ Eager engines are built approximately the same as existing addons. Differences a
 
 Beyond that it adds in a configuration module for the engine, and nothing else. It is a remarkably straightforward process.
 
- ## Lazy Engines
+# Lazy Engines
 
 Lazy engines are built in the same way as eager engines, but their assets are not combined back into the host application's `vendor.js` file. This means that they are run through a separate and unique build process from what a default addon will go through, though it reaches out to the upstream implementation in Ember CLI where possible.
 
