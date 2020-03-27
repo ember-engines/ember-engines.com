@@ -1,0 +1,22 @@
+{{#docs-viewer as |viewer|}}
+  {{#viewer.nav as |nav|}}
+    {{nav.section "Introduction"}}
+    {{nav.item "Quickstart" "docs.index"}}
+    {{nav.item "Addons" "docs.addons"}}
+    {{nav.item "Core concepts" "docs.core-concepts"}}
+    {{nav.item "Creating an engine" "docs.creating-an-engine"}}
+    {{nav.item "Deploying and fastboot" "docs.deploying-and-fastboot"}}
+    {{nav.item "Lazy loading" "docs.lazy-loading"}}
+    {{nav.item "Linking and external links" "docs.linking-and-external-links"}}
+    {{nav.item "Mounting engines" "docs.mounting-engines"}}
+    {{nav.item "Services" "docs.services"}}
+    {{nav.item "Sharing components and more" "docs.sharing-components-and-more"}}
+    {{nav.item "Testing" "docs.testing"}}
+    {{nav.item "What are engines" "docs.what-are-engines"}}
+    {{nav.item "Why use engines" "docs.why-use-engines"}}
+  {{/viewer.nav}}
+
+  {{#viewer.main}}
+    {{outlet}}
+  {{/viewer.main}}
+{{/docs-viewer}}

@@ -1,0 +1,69 @@
+<div class="
+  docs-bg-brand docs-text-white
+  docs-px-4 docs-py-16 docs-text-center
+  {{class}}
+">
+  <div class="docs-max-w-sm docs-mx-auto">
+    <h1 class="
+      docs-font-title docs-font-normal docs-text-jumbo-1 md:docs-text-jumbo-2 xl:docs-text-jumbo-3
+      docs-leading-none docs-tracking-tight
+    ">
+      <span class="docs-block docs-text-large-5 md:docs-text-large-6 xl:docs-text-large-7">
+        Ember Engines
+      </span>
+    </h1>
+
+    <p class="
+      docs-mt-4 xl:docs-mt-6 docs-mb-2 docs-leading-small docs-mx-auto docs-tracking-tight
+      docs-text-large-1 md:docs-text-large-2 xl:docs-text-large-3
+    ">
+      Composable applications for ambitious user experiences.
+    </p>
+
+    <div class="docs-mt-8">
+      {{#link-to "docs" class="
+        docs-no-underline docs-bg-white docs-text-brand docs-text-xs docs-px-3 docs-py-2
+        docs-rounded docs-mt-4 docs-shadow-md hover:docs-shadow-lg
+        docs-transition hover:docs-nudge-t docs-font-bold docs-inline-block docs-uppercase
+      "}}
+        Read the docs
+      {{/link-to}}
+    </div>
+
+    {{yield}}
+  </div>
+</div>
+
+<div class="docs-bg-white">
+  <div class="docs-container docs-md">
+    <section class="docs-max-w-md docs-mx-auto docs-pb-8">
+      <aside>Looking for the quickstart? {{#docs-link "docs.index"}}Click here{{/docs-link}}.</aside>
+
+      <h1 id="introduction">Introduction</h1>
+      <p>Welcome to the official guide for Ember Engines! This guide is intended to get you up and running with Engines as implemented in the <a href="https://www.npmjs.com/package/ember-engines"><code>ember-engines</code></a> addon and give you background on various concepts and ideas related to Engines. It is intended to be read from start to finish, but has been broken down in case you want to come back and re-read a specific topic.</p>
+      <p>Do note that since Engines have not had a 1.0.0 release the APIs and examples given in this guide are subject to change.</p>
+      <h2 id="get-help-amp-contribute">Get Help &amp; Contribute</h2>
+      <p>The Ember Engines source code (including this website) is available on <a href="http://github.com/ember-engines">GitHub</a>. If you run into an error with the Engines code itself or think a feature is missing, please <a href="https://github.com/ember-engines/ember-engines/issues">file an issue</a>.</p>
+      <p>The best way to get help for project-specific issues is via the <a href="https://discordapp.com/invite/zT3asNS">Ember Community Discord</a>. Once you’ve signed up, join the <a href="https://discordapp.com/channels/480462759797063690/487221820638887947">#ember-engines</a> channel.</p>
+      <h2 id="engines-roadmap">Engines Roadmap</h2>
+      <p>Ember Engines are currently pre-1.0 software and under active development. Check out our <a href="https://discuss.emberjs.com/t/engines-1-0-roadmap/14914">roadmap to 1.0</a>.</p>
+      <h2 id="additional-resources">Additional Resources</h2>
+      <ul>
+      <li><a href="https://github.com/ember-engines/ember-engines">Ember Engines on GitHub</a></li>
+      <li><a href="https://github.com/emberjs/rfcs/pull/10">Engines RFC</a></li>
+      <li><a href="https://github.com/emberjs/rfcs/pull/122">Engine Linking RFC</a></li>
+      <li><a href="https://github.com/ember-engines/ember-asset-loader">Ember Asset Loader on GitHub</a></li>
+      <li><a href="https://github.com/emberjs/rfcs/pull/153">Asset Manifest RFC</a></li>
+      <li><a href="https://github.com/emberjs/rfcs/pull/158">Asset Loader Service RFC</a></li>
+      </ul>
+      <p><em>Note: this guide is accurate as of the 0.8.x release of ember-engines</em>.</p>
+
+
+      <div class="docs-my-16 docs-text-right">
+        {{#link-to 'docs' class='docs-bg-grey-darkest hover:docs-bg-black docs-text-white docs-py-2 docs-px-4 docs-no-underline docs-rounded'}}
+          Read the docs →
+        {{/link-to}}
+      </div>
+    </section>
+  </div>
+</div>

@@ -25,7 +25,7 @@ The Ember Engines Guides is a normal Ember application, so if you want to run it
 If you then edit the Markdown files located in the `markdown/guide` folder your
 application should live-update with the content changes.
 
-## How this app works 
+## How this app works
 
 The guides content is in the form of Markdown files in the [guides](https://github.com/ember-engines/ember-engines.com/tree/master/markdown/guide) directory. An Ember app processes and serves the Markdown files. If you look at the `app` directory, you'll see there's not much in it! That's because most of the work is done through a dependency on [ember-fr-markdown-file](https://www.npmjs.com/package/ember-fr-markdown-file) and [ember-cli-showdown](https://www.npmjs.com/package/ember-cli-showdown), to separate markdown files and transform him into valid HTML.
 
