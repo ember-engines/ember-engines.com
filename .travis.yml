@@ -25,8 +25,8 @@ notifications:
 jobs:
   fail_fast: true
 
-  # include:
-  #   - stage: deploy
-  #     if: (branch = master OR tag IS present) AND type = push
-  #     env: NAME=deploy
-  #     script: node_modules/.bin/ember deploy production
+  include:
+    - stage: deploy
+      if: (branch = master OR tag IS present) AND type = push
+      env: NAME=deploy
+      script: node_modules/.bin/ember deploy production
