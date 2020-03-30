@@ -2,6 +2,12 @@
  --brand-primary: #2D2D2D;
 }
 
+.not-found {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 @media only screen and (min-width: 40.0625em) {
   h1,
   h2,
