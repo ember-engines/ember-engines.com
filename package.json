@@ -16,7 +16,7 @@
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
-    "start": "ember server --port $PORT",
+    "start": "ember server",
     "test": "yarn lint"
   },
   "dependencies": {
