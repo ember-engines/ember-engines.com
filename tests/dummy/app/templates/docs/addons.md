@@ -1,4 +1,14 @@
-# Engines & Addons
+# Addons
+
+As mentioned before, Engines are created as a specific type of [Ember Addon](https://cli.emberjs.com/release/writing-addons/). This makes sense given that Addons are Ember's way to easily share common or reusable code. Since Engines are intended to package logical applications that can be composed, they fit nicely into the paradigm of shareable addons.
+
+Addons come in two distinct flavors: _Standard_ and _In-Repo_. Standard Addons (normally just referred to as Addons) are full-fledged NPM packages that can be distributed and installed in other Ember applications. In-repo-addons, on the other hand, live within the repository of an Ember Application and are only used by that specific application.
+
+This distinction is important for Engines, as it is fairly likely to want a logical application represented by an Engine but only use it with a specific Ember Application. In those cases, using an in-repo-engine is a good alternative to consider instead of maintaining two separate repositories.
+
+It is recommended to read through the "[Writing Addons](https://cli.emberjs.com/release/writing-addons/)" portion of the Ember-CLI user guide before moving onto the "[Creating An Engine](./creating-an-engine)" portion of the guide.
+
+## In-repo-addons
 
 If you want to use an addon in an engine, you have to add it to the engines `dependencies`. This is necessary for the following types of addons:
 
@@ -11,13 +21,13 @@ The following types of addons should be placed in the `devDependencies`:
 * Addons that provide services that are passed through from the host app
 * Addons that do build adaptions
 
-## Using Ember Data
+### Using Ember Data
 
 When working with Ember Data, the models are defined in the host app, and you will need to pass the `store` service through to the engine as a dependency. This way, the host app and the engine use the same store and models. You then need to add `ember-data` as a `devDependency` to your engine.
 
 The easiest way to realise this is to define your models in a shared addon, which is included by both your host app and your engine.
 
-## Addon deduplication
+### Addon deduplication
 
 If you are using ember engines **v0.7.1 or higher**: Use `EMBER_ENGINES_ADDON_DEDUPE` environment variable to deduplicate the nested addons of lazy engine which are also host app addons. More details at [#595](https://github.com/ember-engines/ember-engines/pull/595).
 
@@ -58,42 +68,3 @@ Isolation and separation of responsibilities is generally hard to solve. The mos
  3) Somehow split out shared deps into dedicated bundles `(e.g. /engine-assets/shared-by-a-and-b.js)` - Downside: You might end up with 20 bundles `(e.g. shared-by-a-and-b, shared-by-b-and-c-, shared-by-a-b-and-c, ...)`, and it is probably pretty complicated from a built step perspective.
 
 Engines currently take the second approach, but may allow more options in the future.
-
-## Managing multiple addon versions
-
-When working with engines, it is important to avoid including different versions of the same addon. Currently, only one addon version can actually be loaded at a time. If your host app and engines depend on different versions of an addon, you will run into hard to control issues.
-
- For example, imagine the host app depends on `ember-power-select^1.0.0`, engine-a depends on `ember-power-select~2.0.0` and engine-b depends on `ember-power-select~2.1.0`.
-
- Now, three different versions of ember-power-select would be included in the respective vendor bundles. But which version would actually be used in your app/engine would depend on the order in which the bundles are loaded.
-
- Generally, you should ensure that only one version of a given addon is included across your host app and engines. A  great way to ensure this is to use [ember-cli-dependency-lint](https://github.com/salsify/ember-cli-dependency-lint), which will tell you if multiple versions of an addon are installed.
-
- If you use Yarn, you can use [resolutions](https://yarnpkg.com/lang/en/docs/selective-version-resolutions/) to force a specific version to be used by an addon. In the above example, you could add the following to your host apps `package.json`:
-
- ```json
-{
-  "dependencies": {},
-  "devDependencies": {},
-  "resolutions": {
-    "**/ember-power-select": "^1.0.0"
-  }
-}
-```
-
-This would force this version on all addons. Please use this feature with caution, as it is then up to you to make sure that all apps and engines actually work with this version of the addon.
-
-## Using Yarn workspaces
-
-One way to work with engines is to use [Yarn workspaces](https://yarnpkg.com/lang/en/docs/workspaces/). You could set up your app like this:
-
-* `my-app` (workspace)
-  * `packages`
-    * `host-app`
-    * `engine-a`
-    * `engine-b`
-    * `shared-addon`
-
-In this example, the actual app would be in the `my-app/packages/host-app` directory, while `my-app/packages/engine-a` and `my-app/packages/engine-b` would be engines. `my-app/packages/shared-addon` could be a shared addon that is used by the host app & all engines, including for example common components, services or Ember Data models.
-
-The advantage of this approach is that all of these dependencies will always be in sync and up to date. If you change something in the shared addon, it will immediately be reflected in the host app and all engines. It also makes it easier to ensure all engines depend on the same versions of addons.
