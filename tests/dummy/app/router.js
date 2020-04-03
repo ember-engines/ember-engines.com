@@ -8,18 +8,24 @@ const Router = AddonDocsRouter.extend({
 
 Router.map(function() {
   docsRoute(this, function() {
+    this.route('installation');
+    this.route('quickstart');
+    this.route('deploying');
+
+    this.route('dependencies');
+    this.route('isolation');
+    this.route('routable-vs-routeless');
     this.route('addons');
-    this.route('core-concepts');
-    this.route('creating-an-engine');
-    this.route('deploying-and-fastboot');
     this.route('lazy-loading');
-    this.route('linking-and-external-links');
-    this.route('mounting-engines');
     this.route('services');
-    this.route('sharing-components-and-more');
-    this.route('testing');
-    this.route('what-are-engines');
-    this.route('why-use-engines');
+    this.route('sharing-code');
+
+    this.route('testing-intro');
+    this.route('testing-unit');
+    this.route('testing-integration');
+    this.route('testing-acceptance');
+
+    this.route('links');
 
     this.route('not-found', { path: '/*path' });
   });

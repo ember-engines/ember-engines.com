@@ -1,19 +1,28 @@
 {{#docs-viewer as |viewer|}}
   {{#viewer.nav as |nav|}}
-    {{nav.section "Introduction"}}
-    {{nav.item "Quickstart" "docs.index"}}
-    {{nav.item "Addons" "docs.addons"}}
-    {{nav.item "Core concepts" "docs.core-concepts"}}
-    {{nav.item "Creating an engine" "docs.creating-an-engine"}}
-    {{nav.item "Deploying and fastboot" "docs.deploying-and-fastboot"}}
+    {{nav.section "Getting Started"}}
+    {{nav.item "What are Engines?" "docs.index"}}
+    {{nav.item "Installation" "docs.installation"}}
+    {{nav.item "Quickstart" "docs.quickstart"}}
+    {{nav.item "Deploying" "docs.deploying"}}
+
+    {{nav.section "Core Concepts"}}
+    {{nav.item "Dependencies" "docs.dependencies"}}
+    {{nav.item "Isolation" "docs.isolation"}}
+    {{nav.item "Routable vs. Routeless" "docs.routable-vs-routeless"}}
     {{nav.item "Lazy loading" "docs.lazy-loading"}}
-    {{nav.item "Linking and external links" "docs.linking-and-external-links"}}
-    {{nav.item "Mounting engines" "docs.mounting-engines"}}
+    {{nav.item "Addons" "docs.addons"}}
     {{nav.item "Services" "docs.services"}}
-    {{nav.item "Sharing components and more" "docs.sharing-components-and-more"}}
-    {{nav.item "Testing" "docs.testing"}}
-    {{nav.item "What are engines" "docs.what-are-engines"}}
-    {{nav.item "Why use engines" "docs.why-use-engines"}}
+    {{nav.item "Sharing code" "docs.sharing-code"}}
+
+    {{nav.section "Testing"}}
+    {{nav.item "Intro" "docs.testing-intro"}}
+    {{nav.item "Unit" "docs.testing-unit"}}
+    {{nav.item "Integration" "docs.testing-integration"}}
+    {{nav.item "Acceptance" "docs.testing-acceptance"}}
+
+    {{nav.section "Components"}}
+    {{nav.item "Links" "docs.links"}}
   {{/viewer.nav}}
 
   {{#viewer.main}}

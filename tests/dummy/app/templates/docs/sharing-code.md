@@ -1,4 +1,4 @@
-# Sharing Components and More
+# Sharing code
 
 For Engines, globally relevant constructs, such as Services and Route paths, make sense to cross Engine boundaries because they should be unique throughout the system. Non-global constructs, such as Components, Helpers, and Utilities should be handled carefully to avoid incidental coupling with a specific host design/architecture.
 
