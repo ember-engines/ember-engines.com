@@ -69,7 +69,7 @@ Beyond that it adds in a configuration module for the engine, and nothing else. 
 
 # Lazy Engines
 
-Lazy engines are built in the same way as eager engines, but their assets are not combined back into the host application's `vendor.js` file. This means that they are run through a separate and unique build process from what a default addon will go through, though it reaches out to the upstream implementation in Ember CLI where possible.
+Lazy engines are built in the same way as eager engines, but their assets are not combined back into the host application's `vendor-{hash}.js` file. This means that they are run through a separate and unique build process from what a default addon will go through, though it reaches out to the upstream implementation in Ember CLI where possible.
 
 A lazy engine's output (`lazy-engine`) looks like this:
 
@@ -78,15 +78,15 @@ dist
 ├── assets
 │   ├── host-application.css
 │   ├── host-application.js
-│   ├── vendor.css
-│   └── vendor.js
+│   ├── vendor-{hash}.css
+│   └── vendor-{hash}.js
 ├── engines-dist
 │   └── lazy-engine
 |       ├── config
 │       |   ├── enviroment.js
 │       ├── assets
-│       │   ├── engine-vendor.css
-│       │   ├── engine-vendor.js
+│       │   ├── engine-vendor-{hash}.css
+│       │   ├── engine-vendor-{hash}.js
 │       │   ├── engine.css
 │       │   └── engine.js
 │       └── public-asset.jpg
