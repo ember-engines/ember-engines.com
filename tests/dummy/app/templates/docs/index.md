@@ -6,11 +6,11 @@ On a technical level, engines and applications are remarkably similar: they each
 
 The often used example of this is a "blogging" application. While a blog itself could be a full-fledged application, you may also wish to use it as a specific subsection of your overall application. If you threw a "news feed" engine into that mix, you might get an application structure that looks something like this:
 
-<img src="/images/app-engine-diagram.jpeg" alt="Diagram of Application with two Engines" width="850" />
+<img src="/images/app-engine-diagram.jpeg" alt="Diagram of Application with two Engines" width="850">
 
 This host application relies upon Engines to control different "zones" of functionality. However, from the user's perspective, the host application and its engines appear to be a single application.
 
-# Why use Engines?
+## Why use Engines?
 
 Large organizations often use Ember.js to power sophisticated web applications. These apps may require collaboration among several teams, sometimes distributed around the world. Typically, responsibility is shared by dividing the application into one or more "sections". How this division is actually implemented varies from team to team.
 
