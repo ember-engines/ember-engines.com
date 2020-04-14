@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('deploying');
 
     this.route('dependencies');
+    this.route('bundling');
     this.route('isolation');
     this.route('routable-vs-routeless');
     this.route('addons');
