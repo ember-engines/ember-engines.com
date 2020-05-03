@@ -4,7 +4,7 @@ _Ember Engines_ not only provides isolation principles for how your code is run,
 
 ## Host / Engine Dependencies
 
-In the following example:
+In the following examples:
 
 - If the dependency required by the _Engine A_ is different than the _Host_ it will resolve the top level dependency. In this case `Foo` will resolve to `Foo@2`.
 
