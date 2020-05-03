@@ -8,6 +8,14 @@
   padding: 0 1.5rem;
 }
 
+.docs-md ul {
+  list-style: disc;
+}
+
+.docs-md ol {
+  list-style: decimal;
+}
+
 @media only screen and (min-width: 40.0625em) {
   h1,
   h2,
