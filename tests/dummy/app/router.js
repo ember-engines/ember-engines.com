@@ -27,12 +27,12 @@ Router.map(function() {
     this.route('testing-acceptance');
 
     this.route('links');
-
-    this.route('not-found', { path: '/*path' });
   });
 
   // Avoid break the SEO from old website
   this.route('guide');
+
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;
