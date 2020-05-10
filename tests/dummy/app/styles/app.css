@@ -11,12 +11,6 @@ a {
 
 /* FIX tailwind */
 
-.not-found {
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
 .docs-md ul {
   list-style: disc;
 }
