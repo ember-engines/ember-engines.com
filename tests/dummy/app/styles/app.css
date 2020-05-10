@@ -1,6 +1,15 @@
 :root {
- --brand-primary: #2D2D2D;
+ --brand-primary: #C0260C;
 }
+
+/* FIX tailwind */
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* FIX tailwind */
 
 .not-found {
   max-width: 40rem;
