@@ -2,7 +2,7 @@
 
 ## Standalone Engine
 
-The tests are written in the same way as in a normal Ember application.
+The tests are written in the same way as in a normal [Ember application](https://guides.emberjs.com/release/testing/testing-application/).
 
 Suppose that we are setting `index` route on engine router:
 
@@ -40,7 +40,7 @@ Sometimes it is necessary to write acceptance tests on the host app because some
 
 ### Eager Engines
 
-The tests are written in the same way as in a normal Ember application.
+The tests are written in the same way as in a normal [Ember application](https://guides.emberjs.com/release/testing/testing-application/).
 
 ### Lazy Engines
 
