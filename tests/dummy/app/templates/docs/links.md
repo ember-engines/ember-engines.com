@@ -29,7 +29,7 @@ Previously we mentioned that each Engine has it's own `application` route, that 
 Or, maybe even:
 
 ```hbs
-<LinkTo @route="index">Also goes to Blog Hom</LinkTo>
+<LinkTo @route="index">Also goes to Blog Home</LinkTo>
 ```
 
 It's a little confusing at first, but the gist is to think of the route paths as if the Engine were it's own application.
