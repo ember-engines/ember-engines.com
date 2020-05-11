@@ -11,13 +11,14 @@ Suppose that we have in the engine a service that has a `computedFoo` computed p
 import Service from '@ember/service';
 import { computed } from '@ember/object';
 
-export default Service.extend({
-  foo: 'bar',
+export default class SomeService extends Service {
+  foo = 'bar';
 
-  computedFoo: computed('foo', function() {
+  @computed('foo')
+  get computedFoo() {
     return `computed ${this.foo}`;
-  })
-});
+  }
+}
 ```
 
 The unit test will be like this:

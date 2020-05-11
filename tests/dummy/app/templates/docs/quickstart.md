@@ -177,21 +177,21 @@ Next, add the following code to `engine.js`:
 
 ```js
 // addon/engine.js
+import Engine from '@ember/engine';
 
-import Engine from 'ember-engines/engine';
-import Resolver from 'ember-resolver';
 import loadInitializers from 'ember-load-initializers';
+import Resolver from 'ember-resolver';
+
 import config from './config/environment';
 
 const { modulePrefix } = config;
-const Eng = Engine.extend({
-  modulePrefix,
-  Resolver
-});
 
-loadInitializers(Eng, modulePrefix);
+export default class YourEngine extends Engine {
+  modulePrefix = modulePrefix;
+  Resolver = Resolver;
+}
 
-export default Eng;
+loadInitializers(YourEngine, modulePrefix);
 ```
 
 This code will look familiar to anyone that's seen an Ember Application's `app.js` file before. Since Engines are so closely related to Applications, it makes sense that their initial files look similar.
@@ -224,7 +224,7 @@ Observant developers might also note that Addon's have an `app` directory in add
 
 ## Adding Routes for Routable Engines
 
-At this point, if you're building a Route-less Engine, then you're done and can skip ahead to the "[Mounting An Engine](./mounting-engines)" section. If, however, you're building a Routable Engine, then you need to create one more file:
+At this point, if you're building a Route-less Engine, then you're done and can skip ahead to the "[Mounting An Engine](#mounting-an-engine)" section. If, however, you're building a Routable Engine, then you need to create one more file:
 
 ```shell
 touch addon/routes.js
