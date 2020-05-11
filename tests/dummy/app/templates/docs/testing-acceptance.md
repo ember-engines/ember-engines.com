@@ -34,7 +34,7 @@ module('basic acceptance test', function(hooks) {
 });
 ```
 
-### Stubbing dependencies
+### Stubbing services
 
 In cases where engines have `services` dependencies, it is possible to stub these dependencies for acceptance tests. 
 
@@ -101,9 +101,63 @@ module('basic acceptance test', function(hooks) {
 });
 ```
 
+### Stubbing external routes
+
+In cases where engines have `externalRoutes` dependencies, it is possible to stub these dependencies for acceptance tests.
+
+The first step is to specify on the dummy app the external routes provided by host-app like so:
+
+```js
+// admin-engine/tests/dummy/app/app.js
+import Application from '@ember/application';
+
+export default class App extends Application {
+  // ...
+  constructor() {
+    super(...arguments);
+
+    this.engines = {
+      adminEngine: {
+        dependencies: {
+          externalRoutes: ['home']
+        }
+      }
+    }
+  }
+}
+```
+
+To stub the external route service in your test, create a local stub object that extends `Service from @ember/service`, and register the stub as the service your test.
+
+```js
+// admin-engine/tests/acceptance/basic-test.js
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
+import { visit, click, currentURL } from '@ember/test-helpers';
+import Service from '@ember/service';
+
+module('basic acceptance test', function(hooks) {
+  setupApplicationTest(hooks);
+
+  test('the user can click on the home button and trigger external transition', async function(assert) {
+    const transitionToExternal = (actual) => {
+      let expected = 'home';
+      assert.equal(actual, expected);
+    });
+    const router = Service.extend({ transitionToExternal });
+  
+    this.owner.unregister('service:router');
+    this.owner.register('service:router', router);
+
+    await visit('/');
+    await click('.back-to-home');
+  });
+});
+```
+
 ## Host Application
 
-Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that through dependencies coming from host app such as `services` that caninteracts a lot with a host app or redirect to an external context by `externalRoutes`. Therefore, in acceptance tests normally we try to avoid mocking external dependencies, because it's not good for acceptance tests since they're supposed to test things as close to "real life" as possible.
+Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that through dependencies coming from host app such as `services` that interacts a lot with a host app or redirect to an external context by `externalRoutes`. Therefore, in acceptance tests normally we try to avoid mocking external dependencies, because it's not good for acceptance tests since they're supposed to test things as close to "real life" as possible.
 
 ### Eager Engines
 
