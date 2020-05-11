@@ -17,7 +17,7 @@ export default buildRoutes(function() {
 Here is an acceptance test for routing:
 
 ```js
-
+// admin-engine/tests/acceptance/basic-test.js
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { visit, click, currentURL } from '@ember/test-helpers';
@@ -26,6 +26,69 @@ module('basic acceptance test', function(hooks) {
   setupApplicationTest(hooks);
 
   test('the user can visit home page', async function(assert) {
+    await visit('/');
+    await click('.admin-menu-item');
+
+    assert.equal(currentURL(), '/');
+  });
+});
+```
+
+### Stubbing dependencies
+
+In cases where engines have `services` dependencies, it is possible to stub these dependencies for acceptance tests. 
+
+The first step is to specify on the dummy app the services provided by host-app like so:
+
+
+```js
+// admin-engine/tests/dummy/app/app.js
+import Application from '@ember/application';
+
+const App = Application.extend({
+  // ...
+  engines: {
+    superBlog: {
+      dependencies: {
+        services: ['location-service']
+      }
+    }
+  }
+});
+```
+To stub the location service in your test, create a local stub object that extends `Service from @ember/service`, and register the stub as the service your test.
+
+```js
+// admin-engine/tests/acceptance/basic-test.js
+import { module, test } from 'qunit';
+import { setupApplicationTest } from 'ember-qunit';
+import { visit, click, currentURL } from '@ember/test-helpers';
+import Service from '@ember/service';
+
+//Stub location service
+class LocationStub extends Service {
+  city = 'New York';
+  country = 'USA';
+  currentLocation = {
+    x: 1234,
+    y: 5678
+  };
+
+  getCurrentCity() {
+    return this.city;
+  }
+
+  getCurrentCountry() {
+    return this.country;
+  }
+}
+
+module('basic acceptance test', function(hooks) {
+  setupApplicationTest(hooks);
+
+  test('the user can visit home page', async function(assert) {
+    this.owner.register('service:location-service', LocationStub);
+
     await visit('/');
     await click('.admin-menu-item');
 
@@ -47,6 +110,7 @@ The tests are written in the same way as in a normal [Ember application](https:/
 If you have a lazy engine, you'll need to ensure that your `tests/test-helper.js` is configured to preload your engine's assets:
 
 ```js
+// <app-name>/tests/test-helper.js
 import Application from '../app';
 import config from '../config/environment';
 import { setApplication } from '@ember/test-helpers';
@@ -62,7 +126,7 @@ preloadAssets(manifest).then(start); // This ensures all engine resources are lo
 Suppose that we are mouting `admin-engine` on host-app router:
 
 ```js
-// host-app/app/router.js
+// <app-name>/app/router.js
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 
@@ -81,7 +145,7 @@ export default Router;
 Here is an acceptance test for routing:
 
 ```js
-
+// <app-name>/tests/acceptance/basic-test.js
 import { module, test } from 'qunit';
 import { setupApplicationTest } from 'ember-qunit';
 import { visit, click, currentURL } from '@ember/test-helpers';
