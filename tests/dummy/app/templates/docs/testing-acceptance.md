@@ -45,16 +45,20 @@ The first step is to specify on the dummy app the services provided by host-app 
 // admin-engine/tests/dummy/app/app.js
 import Application from '@ember/application';
 
-const App = Application.extend({
+export default class App extends Application {
   // ...
-  engines: {
-    superBlog: {
-      dependencies: {
-        services: ['location-service']
+  constructor() {
+    super(...arguments);
+
+    this.engines = {
+      adminEngine: {
+        dependencies: {
+          services: ['location-service']
+        }
       }
     }
   }
-});
+}
 ```
 To stub the location service in your test, create a local stub object that extends `Service from @ember/service`, and register the stub as the service your test.
 
@@ -99,7 +103,7 @@ module('basic acceptance test', function(hooks) {
 
 ## Host Application
 
-Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that through dependencies coming from host app such as `services` that can update UI states on host app or redirect to an external context by `externalRoute`. Therefore, in acceptance tests normally we try to avoid mocking external dependencies, because it's not good for acceptance tests since they're supposed to test things as close to "real life" as possible.
+Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that through dependencies coming from host app such as `services` that caninteracts a lot with a host app or redirect to an external context by `externalRoutes`. Therefore, in acceptance tests normally we try to avoid mocking external dependencies, because it's not good for acceptance tests since they're supposed to test things as close to "real life" as possible.
 
 ### Eager Engines
 
@@ -130,10 +134,10 @@ Suppose that we are mouting `admin-engine` on host-app router:
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 
-const Router = EmberRouter.extend({
-  location: config.locationType,
-  rootURL: config.rootURL
-});
+export default class Router extends EmberRouter {
+  location = config.locationType;
+  rootURL = config.rootURL;
+}
 
 Router.map(function() {
   this.mount('admin');
