@@ -140,14 +140,16 @@ module('basic acceptance test', function(hooks) {
   setupApplicationTest(hooks);
 
   test('the user can click on the home button and trigger external transition', async function(assert) {
-    const transitionToExternal = (actual) => {
-      let expected = 'home';
-      assert.equal(actual, expected);
-    });
-    const router = Service.extend({ transitionToExternal });
-  
     this.owner.unregister('service:router');
-    this.owner.register('service:router', router);
+    this.owner.register(
+      'service:router',
+      class extends Service {
+        transitionToExternal(actual) {
+          let expected = 'home';
+          assert.equal(actual, expected);
+        }
+      }
+    );
 
     await visit('/');
     await click('.back-to-home');

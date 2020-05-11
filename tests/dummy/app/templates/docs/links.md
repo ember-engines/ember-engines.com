@@ -9,13 +9,13 @@ Within a routable Engine, route paths are relative to the Engine's "mount point"
 In other words, if you're trying to go to route `super-blog.posts.index`, you might do the following from the host application:
 
 ```hbs
-{{#link-to "super-blog.posts.index"}}Comments{{/link-to}}
+<LinkTo @route="super-blog.posts.index">Comments</LinkTo>
 ```
 
 However, if you are inside the `super-blog` Engine, you would need to do the following:
 
 ```hbs
-{{#link-to "posts.index"}}Comments{{/link-to}}
+<LinkTo @route="posts.index">Comments</LinkTo>
 ```
 
 Notice that the `super-blog` portion of the path is now missing, this is because that is the Engine's mount point.
@@ -23,13 +23,13 @@ Notice that the `super-blog` portion of the path is now missing, this is because
 Previously we mentioned that each Engine has it's own `application` route, that route corresponds to the mount point when within the Engine. So, if you wanted to go to `super-blog` (or the root of the Engine) from within the Engine itself, you would do something like:
 
 ```hbs
-{{#link-to "application"}}Goes to Blog Home{{/link-to}}
+<LinkTo @route="application">Goes to Blog Home</LinkTo>
 ```
 
 Or, maybe even:
 
 ```hbs
-{{#link-to "index"}}Also goes to Blog Home{{/link-to}}
+<LinkTo @route="index">Also goes to Blog Home</LinkTo>
 ```
 
 It's a little confusing at first, but the gist is to think of the route paths as if the Engine were it's own application.
@@ -44,15 +44,15 @@ In order to deal with this, Engines allow you to specify external routes as depe
 
 ```js
 // super-blog/addon/engine.js
-export default Engine.extend({
+export default class SuperBlog extends Engine {
   // ...
-  dependencies: {
+  dependencies = {
     externalRoutes: [
       'home',
       'settings'
     ]
-  }
-});
+  };
+}
 ```
 
 External routes define things that your Engine needs to link to. The host is then responsible for telling you where those things are. In other words, the Engine defines _what_ it would like to go to and the application tells it _where_ that is.
@@ -65,39 +65,43 @@ So, when you mount your Engine, you'll need to make sure the host specifies appr
 // dummy/app/app.js
 import Application from '@ember/application';
 
-const App = Application.extend({
+export default class App extends Application {
   // ...
-  engines: {
-    superBlog: {
-      dependencies: {
-        externalRoutes: {
-          home: 'home.index',
-          settings: 'settings.blog.index'
+  constructor() {
+    super(...arguments);
+
+    this.engines = {
+      superBlog: {
+        dependencies: {
+          externalRoutes: {
+            home: 'home.index',
+            settings: 'settings.blog.index'
+          }
         }
       }
     }
   }
-});
+}
 ```
 
 _Note that the Engine name, which is normally dasherized, is camel-cased here instead._
 
-You can use these external routes within your Engine via the `{{link-to-external}}` component:
+You can use these external routes within your Engine via the `<LinkToExternal/>` component:
 
 ```hbs
-{{link-to-external "Go home" "home"}}
+<LinkToExternal @route="home">Go Home</LinkToExternal>
 ```
 
 Or, one of the programmatic APIs, such as `Route#transitionToExternal` and `Route#replaceWithExternal`:
 
 ```js
 import Route from "@ember/routing/route";
+import { action } from '@ember/object';
 
-export default Route.extend({
-  actions: {
-    goHome() {
-      this.transitionToExternal('home');
-    }
+export default class YourRoute extends Route {
+  @action
+  goHome() {
+    this.transitionToExternal('home');
   }
 });
 ```

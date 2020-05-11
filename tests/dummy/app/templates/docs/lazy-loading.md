@@ -34,7 +34,7 @@ For example, if you had a `Post` route defined like so:
 ```js
 import Route from "@ember/routing/route";
 
-export default Route.extend({
+export default class PostRoute extends Route {
   serialize(model) {
     return { post_id: model.id };
   }
