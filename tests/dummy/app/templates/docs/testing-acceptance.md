@@ -1,6 +1,6 @@
 # Acceptance Testing
 
-## Engines
+## Standalone Engine
 
 The tests are written in the same way as in a normal Ember application.
 
