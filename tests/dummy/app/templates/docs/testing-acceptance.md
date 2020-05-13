@@ -2,7 +2,7 @@
 
 ## Testing Standalone Engine
 
-The first step is mounting the engine on the dummy app router:
+The first step is mounting the engine on the dummy app:
 
 ```js
 // admin-engine/tests/dummy/app/router.js
