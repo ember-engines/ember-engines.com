@@ -1,8 +1,27 @@
 # Acceptance Testing
 
-## Standalone Engine
+## Testing Standalone Engine
 
-The tests are written in the same way as in a normal [Ember application](https://guides.emberjs.com/release/testing/testing-application/).
+The first step is mounting the engine on the dummy app router:
+
+```js
+// admin-engine/tests/dummy/app/router.js
+import EmberRouter from '@ember/routing/router';
+import config from './config/environment';
+
+export default class Router extends EmberRouter {
+  location = config.locationType;
+  rootURL = config.rootURL;
+}
+
+Router.map(function() {
+  this.mount('admin');
+});
+
+export default Router;
+```
+
+Now you can write tests in the same way as in a normal [Ember application](https://guides.emberjs.com/release/testing/testing-application/).
 
 Suppose that we are setting `index` route on engine router:
 
@@ -10,7 +29,7 @@ Suppose that we are setting `index` route on engine router:
 import buildRoutes from 'ember-engines/routes';
 
 export default buildRoutes(function() {
-  this.route('index');
+  this.route('users');
 });
 ```
 
@@ -27,9 +46,9 @@ module('basic acceptance test', function(hooks) {
 
   test('the user can visit home page', async function(assert) {
     await visit('/');
-    await click('.admin-menu-item');
+    await click('.user-menu-item');
 
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/users');
   });
 });
 ```
@@ -94,9 +113,9 @@ module('basic acceptance test', function(hooks) {
     this.owner.register('service:location-service', LocationStub);
 
     await visit('/');
-    await click('.admin-menu-item');
+    await click('.user-menu-item');
 
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/users');
   });
 });
 ```
@@ -157,7 +176,7 @@ module('basic acceptance test', function(hooks) {
 });
 ```
 
-## Host Application
+## Testing Host Application
 
 Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that through dependencies coming from host app such as `services` that interacts a lot with a host app or redirect to an external context by `externalRoutes`. Therefore, in acceptance tests normally we try to avoid mocking external dependencies, because it's not good for acceptance tests since they're supposed to test things as close to "real life" as possible.
 
