@@ -178,7 +178,7 @@ module('basic acceptance test', function(hooks) {
 
 ## Testing Host Application
 
-Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that depend on the host app such as `services` that interact a lot with a host app or a redirect to an external context by [external routes](./links#external-Routes). Therefore, in acceptance tests normally we try to avoid mocking external dependencies, since this kind of test is supposed to test things as close to "real life" as possible.
+Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that depend on the host app such as `services` that interact a lot with a host app or a redirect to an external context by [external routes](./links#external-routes). Therefore, in acceptance tests normally we try to avoid mocking external dependencies, since this kind of test is supposed to test things as close to "real life" as possible.
 
 ### Eager Engines
 
