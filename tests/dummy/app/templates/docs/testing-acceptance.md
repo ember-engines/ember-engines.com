@@ -23,7 +23,7 @@ export default Router;
 
 Now you can write tests in the same way as in a normal [Ember application](https://guides.emberjs.com/release/testing/testing-application/).
 
-Suppose that we are setting `index` route on engine router:
+Suppose that we are setting `users` route on engine router:
 
 ```js
 import buildRoutes from 'ember-engines/routes';
