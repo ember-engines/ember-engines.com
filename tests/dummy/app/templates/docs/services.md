@@ -4,7 +4,7 @@ In addition to external routes, you can also specify Services as dependencies of
 
 ```js
 // super-blog/addon/engine.js
-export default class YourEngine extends Engine {
+export default class SuperBlog extends Engine {
   // ...
   dependencies = {
     services: [
