@@ -15,7 +15,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-  this.mount('admin');
+  this.mount('admin-engine', { path: '/' });
 });
 
 export default Router;
@@ -215,7 +215,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-  this.mount('admin');
+  this.mount('admin-engine', { path: 'admin' });
 });
 
 export default Router;
