@@ -8,4 +8,15 @@ However, there are use cases for needing to share components and more across Eng
 
 ## Addon Re-exports
 
-Any addon included in your Engine's `package.json` file will automatically get included in your Engine.
+Any addon included in your Engine's package.json `dependencies` key will automatically get included in your Engine.
+
+Suppose we have these two addons `common-components` and `payment-graph` to share code between the host app and engine, so we can re-use the common elements and payment graphs within the engine.
+
+```json
+"dependencies": {
+  "common-components": "0.0.0",
+  "payment-graph": "0.0.0",
+  "ember-cli-babel": "^7.19.0",
+  "ember-cli-htmlbars": "^5.1.2"
+}
+```
