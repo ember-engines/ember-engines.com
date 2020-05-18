@@ -15,8 +15,6 @@ Suppose we have these two addons `common-components` and `payment-graph` to shar
 ```json
 "dependencies": {
   "common-components": "0.0.0",
-  "payment-graph": "0.0.0",
-  "ember-cli-babel": "^7.19.0",
-  "ember-cli-htmlbars": "^5.1.2"
+  "payment-graph": "0.0.0"
 }
 ```
