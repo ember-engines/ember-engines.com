@@ -5,16 +5,3 @@ For Engines, globally relevant constructs, such as Services and Route paths, mak
 For instance, having to provide several route paths and services, such as Ember Data's Store, creates a relatively easy to fulfill API for consumers of your Engine. If your Engine also required specific components, helpers, and utilities, all needing to conform to the API usage inside your Engine, then you all of a sudden have substantially more coupling involved. This is bad for isolation and does not give you flexibility in developing your Engine independently of your host.
 
 However, there are use cases for needing to share components and more across Engine boundaries. In those instances, the proper solution is to move the shared constructs into an addon.
-
-## Using an Addon
-
-Suppose we have these two addons `common-components` and `payment-graph` to share code between the host app and engine, so we can re-use the common elements and payment graphs within the engine.
-
-```json
-"dependencies": {
-  "common-components": "0.0.0",
-  "payment-graph": "0.0.0"
-}
-```
-
-Any addon included in your Engine's package.json `dependencies` key will automatically get included in your Engine.
