@@ -6,9 +6,7 @@ For instance, having to provide several route paths and services, such as Ember 
 
 However, there are use cases for needing to share components and more across Engine boundaries. In those instances, the proper solution is to move the shared constructs into an addon.
 
-## Addon Re-exports
-
-Any addon included in your Engine's package.json `dependencies` key will automatically get included in your Engine.
+## Using an Addon
 
 Suppose we have these two addons `common-components` and `payment-graph` to share code between the host app and engine, so we can re-use the common elements and payment graphs within the engine.
 
@@ -18,3 +16,5 @@ Suppose we have these two addons `common-components` and `payment-graph` to shar
   "payment-graph": "0.0.0"
 }
 ```
+
+Any addon included in your Engine's package.json `dependencies` key will automatically get included in your Engine.
