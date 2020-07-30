@@ -1,4 +1,4 @@
-# Links
+# Linking Between Engines (and Applications)
 
 Routing and linking within and between Engines is a bit more complicated than with normal Ember applications. This is because Engines are isolated and thus don't know about routes beyond their own borders. Let's look at what this means practically.
 
