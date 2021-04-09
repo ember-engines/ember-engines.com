@@ -10,7 +10,7 @@ However, we don't want to automatically create either of these services in an en
 
 In order to migrate, use any other names please:
 
-Bad:
+Before:
 
 ```js
 export default class App extends Application {
@@ -31,7 +31,8 @@ export default class App extends Application {
 }
 
 ```
-Good:
+
+After:
 
 ```js
 export default class App extends Application {
