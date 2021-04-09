@@ -27,6 +27,8 @@ Router.map(function() {
     this.route('testing-acceptance');
 
     this.route('links');
+
+    this.route('deprecations');
   });
 
   // Avoid break the SEO from old website
