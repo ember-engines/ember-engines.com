@@ -1,6 +1,6 @@
 # Deprecations
 
-### Use alias for inject router service from host application
+### § Use alias for inject router service from host application
 
 **until**: 0.9.0
 
