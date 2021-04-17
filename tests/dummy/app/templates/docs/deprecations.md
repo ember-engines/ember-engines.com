@@ -1,14 +1,12 @@
 # Deprecations
 
-### Host router service
+### § Use alias for inject router service from host application
 
 **until**: 0.9.0
 
 **id**: ember-engines.deprecation-router-service-from-host
 
-However, we don't want to automatically create either of these services in an engine - the decision should be the developer's.
-
-In order to migrate, use any other names please:
+Unintentionally an Engine can inherit the `router` service from host application breaking the encapsulation that is the main goal of this project. Instead you must pass the host's `router` with an alias.
 
 Before:
 
@@ -44,7 +42,7 @@ export default class App extends Application {
       superBlog: {
         dependencies: {
           services: [
-            { 'host-router'}: 'router',
+            { 'host-router': 'router' }
           ]
         }
       }
