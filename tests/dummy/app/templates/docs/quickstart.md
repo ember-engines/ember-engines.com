@@ -129,15 +129,15 @@ Pretty simple so far. At this point, we have everything needed to actually creat
 
 ### Configuring your Engine
 
-Within your Engine's root directory, modify `index.js` so that your addon is configured as an engine using the EngineAddon extension:
+Within your Engine's root directory, modify `index.js` so that your addon is configured as an Engine using the `buildEngine` function:
 
 ```js
 // index.js
 
 /*jshint node:true*/
-const EngineAddon = require('ember-engines/lib/engine-addon');
+const { buildEngine } = require('ember-engines/lib/engine-addon');
 
-module.exports = EngineAddon.extend({
+module.exports = buildEngine({
   name: 'ember-blog',
   lazyLoading: {
     enabled: false
