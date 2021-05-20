@@ -70,7 +70,7 @@ export default class App extends Application {
     super(...arguments);
 
     this.engines = {
-      adminEngine: {
+      'admin-engine': {
         dependencies: {
           services: ['location-service']
         }
@@ -136,7 +136,7 @@ export default class App extends Application {
     super(...arguments);
 
     this.engines = {
-      adminEngine: {
+      'admin-engine': {
         dependencies: {
           externalRoutes: ['home']
         }
