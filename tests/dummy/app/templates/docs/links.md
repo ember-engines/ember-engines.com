@@ -71,7 +71,7 @@ export default class App extends Application {
     super(...arguments);
 
     this.engines = {
-      superBlog: {
+      'super-blog': {
         dependencies: {
           externalRoutes: {
             home: 'home.index',

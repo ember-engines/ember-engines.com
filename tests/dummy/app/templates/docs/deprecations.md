@@ -17,7 +17,7 @@ export default class App extends Application {
     super(...arguments);
 
     this.engines = {
-      superBlog: {
+      'super-blog': {
         dependencies: {
           services: [
             'router',
@@ -39,7 +39,7 @@ export default class App extends Application {
     super(...arguments);
 
     this.engines = {
-      superBlog: {
+      'super-blog': {
         dependencies: {
           services: [
             { 'host-router': 'router' }

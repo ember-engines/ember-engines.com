@@ -25,7 +25,7 @@ export default class App extends Application {
     super(...arguments);
 
     this.engines = {
-      superBlog: {
+      'super-blog': {
         dependencies: {
           services: [
             'store',
