@@ -134,7 +134,6 @@ Within your Engine's root directory, modify `index.js` so that your addon is con
 ```js
 // index.js
 
-/*jshint node:true*/
 const { buildEngine } = require('ember-engines/lib/engine-addon');
 
 module.exports = buildEngine({
@@ -152,7 +151,6 @@ Within your Engine's `config` directory, modify the `environment.js` file:
 ```js
 // config/environment.js
 
-/*jshint node:true*/
 'use strict';
 
 module.exports = function(environment) {

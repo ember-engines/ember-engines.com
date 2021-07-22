@@ -13,21 +13,16 @@ Before:
 ```js
 export default class App extends Application {
   // ...
-  constructor() {
-    super(...arguments);
-
-    this.engines = {
-      'super-blog': {
-        dependencies: {
-          services: [
-            'router',
-          ]
-        }
+  engines = {
+    'super-blog': {
+      dependencies: {
+        services: [
+          'router'
+        ]
       }
     }
   }
 }
-
 ```
 
 After:
@@ -35,19 +30,14 @@ After:
 ```js
 export default class App extends Application {
   // ...
-  constructor() {
-    super(...arguments);
-
-    this.engines = {
-      'super-blog': {
-        dependencies: {
-          services: [
-            { 'host-router': 'router' }
-          ]
-        }
+  engines = {
+    'super-blog': {
+      dependencies: {
+        services: [
+          { 'host-router': 'router' }
+        ]
       }
     }
   }
 }
-
 ```

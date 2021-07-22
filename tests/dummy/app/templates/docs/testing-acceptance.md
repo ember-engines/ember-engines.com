@@ -66,14 +66,12 @@ import Application from '@ember/application';
 
 export default class App extends Application {
   // ...
-  constructor() {
-    super(...arguments);
-
-    this.engines = {
-      'admin-engine': {
-        dependencies: {
-          services: ['location-service']
-        }
+  engines = {
+    'admin-engine': {
+      dependencies: {
+        services: [
+          'location-service'
+        ]
       }
     }
   }
@@ -132,14 +130,12 @@ import Application from '@ember/application';
 
 export default class App extends Application {
   // ...
-  constructor() {
-    super(...arguments);
-
-    this.engines = {
-      'admin-engine': {
-        dependencies: {
-          externalRoutes: ['home']
-        }
+  engines = {
+    'admin-engine': {
+      dependencies: {
+        externalRoutes: [
+          'home'
+        ]
       }
     }
   }

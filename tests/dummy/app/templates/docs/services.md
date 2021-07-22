@@ -21,17 +21,13 @@ This means that your Engine will expect the host application to provide both the
 // dummy/app/app.js
 export default class App extends Application {
   // ...
-  constructor() {
-    super(...arguments);
-
-    this.engines = {
-      'super-blog': {
-        dependencies: {
-          services: [
-            'store',
-            { 'session': 'user-session' }
-          ]
-        }
+  engines = {
+    'super-blog': {
+      dependencies: {
+        services: [
+          'store',
+          { 'session': 'user-session' }
+        ]
       }
     }
   }
