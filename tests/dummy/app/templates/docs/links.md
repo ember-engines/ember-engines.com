@@ -67,16 +67,12 @@ import Application from '@ember/application';
 
 export default class App extends Application {
   // ...
-  constructor() {
-    super(...arguments);
-
-    this.engines = {
-      'super-blog': {
-        dependencies: {
-          externalRoutes: {
-            home: 'home.index',
-            settings: 'settings.blog.index'
-          }
+  engines = {
+    'super-blog': {
+      dependencies: {
+        externalRoutes: {
+          home: 'home.index',
+          settings: 'settings.blog.index'
         }
       }
     }
