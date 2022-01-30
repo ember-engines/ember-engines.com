@@ -176,28 +176,6 @@ module('basic acceptance test', function(hooks) {
 
 Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that depend on the host app such as `services` that interact a lot with a host app or a redirect to an external context by [external routes](./links#external-routes). Therefore, in acceptance tests normally we try to avoid mocking external dependencies, since this kind of test is supposed to test things as close to "real life" as possible.
 
-### Eager Engines
-
-The tests are written in the same way as in a normal [Ember application](https://guides.emberjs.com/release/testing/testing-application/).
-
-### Lazy Engines
-
-If you have a lazy engine, you'll need to ensure that your `tests/test-helper.js` is configured to preload your engine's assets:
-
-```js
-// <app-name>/tests/test-helper.js
-import Application from '../app';
-import config from '../config/environment';
-import { setApplication } from '@ember/test-helpers';
-import { start } from 'ember-qunit';
-import preloadAssets from 'ember-asset-loader/test-support/preload-assets';
-import manifest from '<app-name>/config/asset-manifest';
-
-setApplication(Application.create(config.APP));
-
-preloadAssets(manifest).then(start); // This ensures all engine resources are loaded before the tests
-```
-
 Suppose that we are mouting `admin-engine` on host-app router:
 
 ```js
