@@ -80,8 +80,6 @@ export default class App extends Application {
 }
 ```
 
-_Note that the Engine name, which is normally dasherized, is camel-cased here instead._
-
 You can use these external routes within your Engine via the `<LinkToExternal/>` component:
 
 ```hbs
