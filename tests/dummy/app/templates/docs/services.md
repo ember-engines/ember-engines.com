@@ -4,9 +4,9 @@ In addition to external routes, you can also specify Services as dependencies of
 
 ```js
 // super-blog/addon/engine.js
-export default Engine.extend({
+export default class SuperBlog extends Engine {
   // ...
-  dependencies: {
+  dependencies = {
     services: [
       'store',
       'session'
@@ -19,12 +19,10 @@ This means that your Engine will expect the host application to provide both the
 
 ```js
 // dummy/app/app.js
-import Application from '@ember/application';
-
-const App = Application.extend({
+export default class App extends Application {
   // ...
-  engines: {
-    superBlog: {
+  engines = {
+    'super-blog': {
       dependencies: {
         services: [
           'store',
@@ -33,7 +31,7 @@ const App = Application.extend({
       }
     }
   }
-});
+}
 ```
 
 In this example, the host provides its `store` service for the Engine's `store`. The Engine's `session` service, however, is actually the `user-session` service of the host. Thus, you can provide a re-mapping of service names by using an object instead of a simple string.

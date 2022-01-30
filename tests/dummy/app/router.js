@@ -28,8 +28,13 @@ Router.map(function() {
 
     this.route('links');
 
-    this.route('not-found', { path: '/*path' });
+    this.route('deprecations');
   });
+
+  // Avoid break the SEO from old website
+  this.route('guide');
+
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;

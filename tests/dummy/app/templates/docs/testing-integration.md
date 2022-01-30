@@ -4,7 +4,7 @@ Suppose that our engine has a component:
 
 ```hbs
 {{!--  admin-engine/addon/components/hello-name.hbs --}}
-Hello, {{name}}!
+Hello, {{@name}}!
 ```
 
 Here's an example integration test for that component:
@@ -26,7 +26,7 @@ module('Integration | Component | hello-name', function(hooks) {
 
   test('it renders', async function(assert) {
 
-    await render(hbs`{{#hello-name name="Tom"}}{{/hello-name}}`);
+    await render(hbs`<HelloName @name="Tom"/>`);
 
     assert.equal(this.element.textContent.trim(), 'Hello, Tom!');
   });
