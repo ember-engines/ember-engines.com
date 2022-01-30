@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  NODE_VERSION: 14
+
+jobs:
+  deploy-app:
+    name: Deploy app
+    needs: [lint, test-app]
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+          
+      - name: Bootstrapping
+        run: yarn install     
+
+      - name: Deploy to Github Pages
+        if: (branch = master OR tag IS present) AND type = push
+        env: 
+          NAME: deploy
+        run: yarn deploy
