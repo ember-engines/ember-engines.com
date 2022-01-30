@@ -20,6 +20,7 @@ Router.map(function() {
     this.route('lazy-loading');
     this.route('services');
     this.route('sharing-code');
+    this.route('link-to-external');
 
     this.route('testing-intro');
     this.route('testing-unit');
