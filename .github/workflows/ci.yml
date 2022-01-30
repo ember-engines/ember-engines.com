@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+env:
+  NODE_VERSION: 14
+
+jobs:
+  lint:
+    name: Lint files
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          
+          
+      - name: Bootstrapping
+        run: yarn install     
+
+      - name: Lint
+        run: yarn lint
+
+
+  test-app:
+      name: Test app
+      runs-on: ubuntu-latest
+      timeout-minutes: 3
+      steps:
+        - name: Check out a copy of the repo
+          uses: actions/checkout@v2
+
+        - name: Use Node.js ${{ env.NODE_VERSION }}
+          uses: actions/setup-node@v2
+          with:
+            node-version: ${{ env.NODE_VERSION }}
+
+        - name: Bootstrapping
+          run: yarn install
+
+        - name: Test
+          run: yarn test
