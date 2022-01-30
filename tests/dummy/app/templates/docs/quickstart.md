@@ -94,10 +94,10 @@ Separate addon projects can be created with the addon command:
 ember addon <engine-name>
 ```
 
-So, if we name our Engine `chat-engine`, we just do the following:
+So, if we name our Engine `super-blog`, we just do the following:
 
 ```shell
-ember addon chat-engine
+ember addon super-blog
 ```
 
 Using a vanilla addon we still need turn it into an engine, follow the steps below.
@@ -137,7 +137,7 @@ Within your Engine's root directory, modify `index.js` so that your addon is con
 const { buildEngine } = require('ember-engines/lib/engine-addon');
 
 module.exports = buildEngine({
-  name: 'ember-blog',
+  name: 'super-blog',
   lazyLoading: {
     enabled: false
   }
@@ -155,7 +155,7 @@ Within your Engine's `config` directory, modify the `environment.js` file:
 
 module.exports = function(environment) {
   const ENV = {
-    modulePrefix: 'ember-blog',
+    modulePrefix: 'super-blog',
     environment: environment
   }
 
