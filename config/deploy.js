@@ -6,7 +6,11 @@ module.exports = function(deployTarget) {
     build: {},
     git: {
       repo: "git@github.com:ember-engines/ember-engines.com.git"
-    }
+    },
+    'git-ci': {
+      enabled: true,
+      deployKey: process.env.SECRET_KEY,
+    },
   };
 
   if (deployTarget === "development") {

@@ -49,6 +49,6 @@ jobs:
 
       - name: Deploy to Github Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        env: 
-          NAME: deploy
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         run: yarn deploy
