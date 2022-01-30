@@ -38,7 +38,4 @@ It's a little confusing at first, but the gist is to think of the route paths as
 
 If route paths are scoped to an Engine's mount point, then the next logical question is "what if you need to link to a path that isn't below the mount point?"
 
-We refer to any routes that don't use the Engine's mount point as "external routes", because they are effectively "external" or "outside" the Engine. Since Engines are intended to be isolated, they shouldn't have intimate knowledge of the paths to external routes as they may change depending on where the Engine is mounted. That said, there are legitimate use cases where Engines need to link to routes outside, such as a consuming Application or sibling Engine. See futher details on [`<LinkToExternal/>`](./link-to-external)
-
-You can 
-
+We refer to any routes that don't use the Engine's mount point as "external routes", because they are effectively "external" or "outside" the Engine. Since Engines are intended to be isolated, they shouldn't have intimate knowledge of the paths to external routes as they may change depending on where the Engine is mounted. That said, there are legitimate use cases where Engines need to link to routes outside, such as a consuming Application or sibling Engine. See futher details on [`<LinkToExternal/>`](./link-to-external).
