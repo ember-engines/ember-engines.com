@@ -28,7 +28,7 @@ jobs:
         run: yarn install     
 
       - name: Deploy to Github Pages
-        if: (branch = master OR tag IS present) AND type = push
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         env: 
           NAME: deploy
         run: yarn deploy
