@@ -1,4 +1,4 @@
-# Acceptance Testing
+# Application Testing
 
 ## Testing Standalone Engine
 
@@ -33,7 +33,7 @@ export default buildRoutes(function() {
 });
 ```
 
-Here is an acceptance test for routing:
+Here is an application test for routing:
 
 ```js
 // admin-engine/tests/acceptance/basic-test.js
@@ -55,7 +55,7 @@ module('basic acceptance test', function(hooks) {
 
 ### Stubbing services
 
-In cases where engines have `services` dependencies, it is possible to stub these dependencies for acceptance tests. 
+In cases where engines have `services` dependencies, it is possible to stub these dependencies for application tests. 
 
 The first step is to specify on the dummy app the services provided by host-app like so:
 
@@ -120,7 +120,7 @@ module('basic acceptance test', function(hooks) {
 
 ### Stubbing external routes
 
-In cases where engines have `externalRoutes` dependencies, it is possible to stub these dependencies for acceptance tests.
+In cases where engines have `externalRoutes` dependencies, it is possible to stub these dependencies for application tests.
 
 The first step is to specify on the dummy app the external routes provided by host-app like so:
 
@@ -174,7 +174,7 @@ module('basic acceptance test', function(hooks) {
 
 ## Testing Host Application
 
-Sometimes it is necessary to write acceptance tests on the host app because some engines have flows that depend on the host app such as `services` that interact a lot with a host app or a redirect to an external context by [external routes](./links#external-routes). Therefore, in acceptance tests normally we try to avoid mocking external dependencies, since this kind of test is supposed to test things as close to "real life" as possible.
+Sometimes it is necessary to write application tests on the host app because some engines have flows that depend on the host app such as `services` that interact a lot with a host app or a redirect to an external context by [external routes](./links#external-routes). Therefore, in application tests normally we try to avoid mocking external dependencies, since this kind of test is supposed to test things as close to "real life" as possible.
 
 Suppose that we are mouting `admin-engine` on host-app router:
 
