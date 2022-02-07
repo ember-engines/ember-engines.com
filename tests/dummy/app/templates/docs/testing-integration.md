@@ -1,4 +1,4 @@
-# Integration Testing
+# Rendering Testing
 
 Suppose that our engine has a component:
 
@@ -7,7 +7,7 @@ Suppose that our engine has a component:
 Hello, {{@name}}!
 ```
 
-Here's an example integration test for that component:
+Here's an example rendering test for that component:
 
 ```js
 // <app-name>/tests/integration/components/hello-name-test.js
