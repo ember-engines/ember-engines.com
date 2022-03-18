@@ -60,7 +60,7 @@ Note that route serializers are unique to Engines and won't work in normal appli
 
 The loading and error substates work in a similar fashion to [substates in a normal Ember app](https://guides.emberjs.com/release/routing/loading-and-error-substates/). The only difference is that lazily loaded Engines will enter a loading state while the assets for the Engine are loaded and can enter an error state when an asset fails to load.
 
-## Built Engine Output
+# Built Engine Output
 
 ## Eager Engines
 
@@ -68,7 +68,7 @@ Eager engines are built approximately the same as existing addons. Differences a
 
 Beyond that it adds in a configuration module for the engine, and nothing else. It is a remarkably straightforward process.
 
-# Lazy Engines
+## Lazy Engines
 
 Lazy engines are built in the same way as eager engines, but their assets are not combined back into the host application's `vendor-{hash}.js` file. This means that they are run through a separate and unique build process from what a default addon will go through, though it reaches out to the upstream implementation in Ember CLI where possible.
 
