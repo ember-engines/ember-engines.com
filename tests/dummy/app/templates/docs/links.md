@@ -4,7 +4,7 @@ Routing and linking within and between Engines is a bit more complicated than wi
 
 ## Linking Within An Engine
 
-Within a routable Engine (i.e `super-blog`), route paths are relative to the Engine's "mount point". That is, the route path at which it is mounted. d
+Within a routable Engine (i.e `super-blog`), route paths are relative to the Engine's "mount point". That is, the route path at which it is mounted.
 
 In other words, if you're trying to go to route `super-blog.posts.index`, you might do the following from the host application:
 
