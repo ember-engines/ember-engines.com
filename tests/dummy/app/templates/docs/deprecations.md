@@ -48,9 +48,9 @@ export default class App extends Application {
 
 **id**: ember-engines.deprecation-camelized-engine-names
 
-In host application's we're asked to build out engine configurations using camelized package names.
-This is error prune and awkward - especially for scoped packages. Awkward because our packages already have names used by npm/Yarn/pnpm, e.g. "my-blog", or "my-super-awesome-engine"
-whereas ember-engines asked us to introduce camelization rules and use "myBlog" or "mySuperAwesomeEngine".
+In the host application, we're asked to build out engine configurations using camel cases for package names.
+This is error-prone and awkward - especially for scoped packages. Awkward because our packages already have names used by npm/Yarn/pnpm, e.g. "my-blog", or `my-super-awesome-engine`
+whereas ember-engines asked us to introduce camel case rules and use `myBlog` or `mySuperAwesomeEngine`.
 
 Before:
 
