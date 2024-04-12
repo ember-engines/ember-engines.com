@@ -28,23 +28,17 @@ preloadAssets(manifest).then(start); // This ensures all engine resources are lo
 
 ### Rendering/Unit tests
 
-When you deal with `ember-engines` and you would like to test your engine code (e.g. components and services), you need to make sure that the test environment for your dummy application has access to the engine component and service. To make sure it does, you need to replace the default resolver with a proper engine resolver from an addon:
-
+When you deal with `ember-engines` and you would like to test your engine code (e.g. components and services), you need to make sure that the test environment instantiates the engine. The `setupEngine` helper can be used to automatically load, instantiate, and provide access to the engine.
 
 ```js
 // tests/<integration or unit>/…
-import engineResolverFor from 'ember-engines/test-support/engine-resolver-for';
+import { setupEngine } from 'ember-engines/test-support';
 ```
-To use it, you pass it as a param to your setup call. For instance, in case of unit tests, you replace the default...
+
+To use it, include it in your test module with the name of your engine.
 
 ```js
-setupTest(hooks);
+setupEngine(hooks, '<engine-name>');
 ```
 
-... and use this instead:
-
-```js
-setupTest(hooks, {
-  resolver: engineResolverFor('your-engine-name')
-});
-```
+The engine owner can be accessed in tests through `this.engine`.
