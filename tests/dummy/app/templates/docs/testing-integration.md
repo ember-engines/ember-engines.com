@@ -16,17 +16,14 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import engineResolverFor from 'ember-engines/test-support/engine-resolver-for';
-
-const modulePrefix = 'admin-engine';
-const resolver = engineResolverFor(modulePrefix);
+import { setupEngine } from 'ember-engines/test-support';
 
 module('Integration | Component | hello-name', function(hooks) {
-  setupRenderingTest(hooks, { resolver });
+  setupRenderingTest(hooks);
+  setupEngine(hooks, 'admin-engine')
 
   test('it renders', async function(assert) {
-
-    await render(hbs`<HelloName @name="Tom"/>`);
+    await render(hbs`<HelloName @name="Tom"/>`, { owner: this.engine });
 
     assert.equal(this.element.textContent.trim(), 'Hello, Tom!');
   });

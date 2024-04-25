@@ -1,6 +1,6 @@
 # Unit Testing
 
-To test candidates for unit/integration (e.g. components, services and controllers) declared inside an engine, you need to set a custom resolver with the engine's prefix using `engineResolverFor` helper.
+To test candidates for unit/integration (e.g. components, services and controllers) declared inside an engine, you need to set up the engine using the `setupEngine` helper. This helper provides access to the engine in the test environment via `this.engine`.
 
 What does it look like to test a component from a host app or dummy app? Let's go over some examples in the next section. In the following tests, `admin-engine` is an engine, `hello-name` is a component, and `some-thing` is a service. (Note: the same tests will apply whether `admin-engine` is an in-repo or standalone engine).
 
@@ -28,16 +28,14 @@ The unit test will be like this:
 
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
-import engineResolverFor from 'ember-engines/test-support/engine-resolver-for';
-
-const modulePrefix = 'admin-engine';
-const resolver = engineResolverFor(modulePrefix);
+import { setupEngine } from 'ember-engines/test-support';
 
 module('Unit | Service | some thing', function(hooks) {
-  setupTest(hooks, { resolver });
+  setupTest(hooks);
+  setupEngine(hooks, 'admin-engine')
 
   test('should correctly concat foo', function(assert) {
-    const someThing = this.owner.lookup('service:some-thing');
+    const someThing = this.engine.lookup('service:some-thing');
     someThing.set('foo', 'baz');
 
     assert.equal(someThing.get('computedFoo'), 'computed baz');
