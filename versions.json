@@ -2,13 +2,19 @@
   "-latest": {
     "path": "",
     "name": "Latest",
-    "sha": "fd1ba1278ac3d3658f53e46a900d7ca17eaf5e20",
+    "sha": "05c11a9d415b5b090a76023ada05a55e64b7c1c0",
     "tag": null
   },
   "master": {
     "path": "versions/master",
     "name": "master",
     "sha": "fd1ba1278ac3d3658f53e46a900d7ca17eaf5e20",
+    "tag": null
+  },
+  "deprecate-transition-methods": {
+    "path": "versions/deprecate-transition-methods",
+    "name": "deprecate-transition-methods",
+    "sha": "05c11a9d415b5b090a76023ada05a55e64b7c1c0",
     "tag": null
   }
 }
