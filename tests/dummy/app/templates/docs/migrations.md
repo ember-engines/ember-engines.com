@@ -16,7 +16,7 @@
     ```
 
 2. Add [ember-engines-router-service](https://github.com/villander/ember-engines-router-service) to `dependencies`
-   in package.json of your engine to enable `@service router;` injection.
+   in package.json of your engine to enable `@service router;` injection. Besides that you'll have the full [RouterService](https://api.emberjs.com/ember/release/classes/routerservice/) API inside each engine as promised by the [Engine Linking RFC](https://github.com/emberjs/rfcs/pull/122).
 
     ```diff
     # package.json
