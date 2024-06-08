@@ -32,7 +32,7 @@
    transition methods of Controller and Route were removed.
    Follow [deprecation guide](https://ember-engines.com/docs/deprecations#-transition-methods-of-controller-and-route) for migration examples.
 
-4. Droped support for query param only router service transitions until it's resolved upstream https://github.com/villander/ember-engines-router-service/issues/74.
+4. Dropped support for query param only router service transitions until it's resolved upstream https://github.com/villander/ember-engines-router-service/issues/74.
 
    Example for unsupported syntax ❌:
    ```js
