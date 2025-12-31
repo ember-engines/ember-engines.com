@@ -29,6 +29,7 @@ Router.map(function() {
 
     this.route('links');
 
+    this.route('migrations');
     this.route('deprecations');
   });
 
