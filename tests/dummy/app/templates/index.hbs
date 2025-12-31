@@ -1,7 +1,6 @@
 <div class="
   docs-bg-brand docs-text-white
   docs-px-4 docs-py-16 docs-text-center
-  {{class}}
 ">
   <div class="docs-max-w-sm docs-mx-auto">
     <h1 class="
@@ -21,13 +20,13 @@
     </p>
 
     <div class="docs-mt-8">
-      {{#link-to "docs" class="
+      <LinkTo @route="docs" class="
         docs-no-underline docs-bg-white docs-text-brand docs-text-xs docs-px-3 docs-py-2
         docs-rounded docs-mt-4 docs-shadow-md hover:docs-shadow-lg
         docs-transition hover:docs-nudge-t docs-font-bold docs-inline-block docs-uppercase
-      "}}
+        ">
         Read the docs
-      {{/link-to}}
+      </LinkTo>
     </div>
 
     {{yield}}
@@ -37,7 +36,7 @@
 <div class="docs-bg-white">
   <div class="docs-container docs-md">
     <section class="docs-max-w-md docs-mx-auto docs-pb-8">
-      <aside>Looking for the quickstart? {{#docs-link "docs.quickstart"}}Click here{{/docs-link}}.</aside>
+      <aside>Looking for the quickstart? <DocsLink @route="docs.quickstart">Click here</DocsLink>.</aside>
 
       <h1 id="introduction">Introduction</h1>
       <p>Welcome to the official guide for Ember Engines! This guide is intended to get you up and running with Engines as implemented in the <a href="https://www.npmjs.com/package/ember-engines"><code>ember-engines</code></a> addon and give you background on various concepts and ideas related to Engines. It is intended to be read from start to finish, but has been broken down in case you want to come back and re-read a specific topic.</p>
@@ -60,9 +59,9 @@
 
 
       <div class="docs-my-16 docs-text-right">
-        {{#link-to 'docs' class='docs-bg-grey-darkest hover:docs-bg-black docs-text-white docs-py-2 docs-px-4 docs-no-underline docs-rounded'}}
+        <LinkTo @route='docs' class='docs-bg-grey-darkest hover:docs-bg-black docs-text-white docs-py-2 docs-px-4 docs-no-underline docs-rounded'>
           Read the docs →
-        {{/link-to}}
+        </LinkTo>
       </div>
     </section>
   </div>
