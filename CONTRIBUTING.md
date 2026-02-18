@@ -19,7 +19,7 @@ Developers of all knowledge and experience levels are invited to help out. Here 
 3. Open a Pull Request as soon as you'd like some feedback. This project aims to be "fast and good enough" rather than slower and perfect. Upon reaching MVP, a final pass will be made to polish content.
 4. Expect at least one round of revisions based on feedback from others
 
-If you volunteer for a section but are not able to make progress, please speak up so that others may pick up where you left off. Issues that are inactive without response for 3 weeks may be opened up to new contributors.  
+If you volunteer for a section but are not able to make progress, please speak up so that others may pick up where you left off. Issues that are inactive without response for 3 weeks may be opened up to new contributors.
 
 ## Leaving comments for other writers
 
@@ -29,7 +29,6 @@ the topic, or even some incomplete explanations, you can add
 them as comments in the markdown. This is highly encouraged! We'll strip out comments when we reach MVP.
 
 ## Styleguide
-
 
 ### Code Blocks
 
@@ -63,11 +62,10 @@ Give enough information to form the mental models and show how things are connec
 
 Avoid voice altogether whenever you can. When some voice is needed, use first person plural (“we”, “our”, “let’s”)
 
-
 - Needs revision: “There is an entire ecosystem of adapters that allow our Ember app to talk to different types of servers…”
 - Better: “There is an entire ecosystem of adapters that allow our Ember app to talk to different types of servers …”
 - Best: “There is an entire ecosystem of adapters that allows Ember apps to talk to different types of servers …”
 
 #### Inclusive language
 
-“They/Them” is  used in place of him/he/she/her/etc. Do not use gender in code examples. Avoid terms like “just, simply, obviously” etc.
+“They/Them” is used in place of him/he/she/her/etc. Do not use gender in code examples. Avoid terms like “just, simply, obviously” etc.

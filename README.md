@@ -8,23 +8,23 @@ This repository holds the guides and tutorials for [Ember Engines](https://githu
 
 You will need the following things properly installed on your computer.
 
-* Ember.js v4.12 or above
-* Ember CLI v4.12 or above
-* Node.js v18 or above
+- Ember.js v4.12 or above
+- Ember CLI v4.12 or above
+- Node.js v18 or above
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (with npm)
+- [Ember CLI](https://ember-cli.com/)
 
 ## Local Development
 
 The Ember Engines Guides is a normal Ember application, so if you want to run it locally you follow the standard steps:
 
-* Clone this repository
-* `cd ember-engines.com`
-* `yarn install`
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+- Clone this repository
+- `cd ember-engines.com`
+- `yarn install`
+- `ember serve`
+- Visit your app at [http://localhost:4200](http://localhost:4200).
 
 If you then edit the Markdown files located in the `markdown/guide` folder your
 application should live-update with the content changes.
@@ -35,10 +35,9 @@ The guides content is in the form of Markdown files in the [guides](https://gith
 
 ## Contributing
 
-Do you know a thing or two about the Ember Engines or addons? Do you _wish_ you knew a thing or do?  We'd love to have your help with writing or reviewing to make sure that content is helpful to all knowledge levels. If you're new to writing Markdown, follow [this cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf).
+Do you know a thing or two about the Ember Engines or addons? Do you _wish_ you knew a thing or do? We'd love to have your help with writing or reviewing to make sure that content is helpful to all knowledge levels. If you're new to writing Markdown, follow [this cheat sheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf).
 
 Overall project status and tasks that need help are tracked in [this Quest issue](https://github.com/ember-engines/ember-engines.com/issues/55). Have a read through that and the [CONTRIBUTING.md](CONTRIBUTING.md) file in order to get started.
-
 
 ### Adding more things to the table of contents
 
