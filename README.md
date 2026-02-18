@@ -7,9 +7,10 @@ This repository holds the guides and tutorials for [Ember Engines](https://githu
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
-* Ember.js v4.4 or above
-* Ember CLI v4.4 or above
-* Node.js v14 or above
+
+* Ember.js v4.12 or above
+* Ember CLI v4.12 or above
+* Node.js v18 or above
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with npm)
