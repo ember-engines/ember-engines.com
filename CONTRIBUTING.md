@@ -10,7 +10,7 @@ Developers of all knowledge and experience levels are invited to help out. Here 
 - Help review Pull Requests
 - Add comments to Markdown files with tips, resources, and notes to help others figure out what to write
 
-**Note on respecting copyright** - It is okay to copy/paste content over from ember-engines.com. It is _not_ okay to copy and paste content that you didn't write that came from blog posts, articles, tutorials, etc. whether paid or free. Exceptions are if the license allows it (please link to it in your PR) or you have written permission of the author via a comment on an issue in this repo.
+**Note on respecting copyright** - It is okay to copy/paste content over from ember-engines.netlify.app. It is _not_ okay to copy and paste content that you didn't write that came from blog posts, articles, tutorials, etc. whether paid or free. Exceptions are if the license allows it (please link to it in your PR) or you have written permission of the author via a comment on an issue in this repo.
 
 ## How to get started
 

@@ -4,7 +4,7 @@
   "private": true,
   "description": "The official guides for Ember Engines",
   "repository": "https://github.com/ember-engines/ember-engines.com",
-  "homepage": "ember-engines.com",
+  "homepage": "https://ember-engines.netlify.app/",
   "license": "MIT",
   "author": "",
   "keywords": [
