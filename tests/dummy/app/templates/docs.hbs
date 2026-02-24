@@ -1,37 +1,37 @@
-{{#docs-viewer as |viewer|}}
-  {{#viewer.nav as |nav|}}
-    {{nav.section "Getting Started"}}
-    {{nav.item "What are Engines?" "docs.index"}}
-    {{nav.item "Installation" "docs.installation"}}
-    {{nav.item "Quickstart" "docs.quickstart"}}
-    {{nav.item "Deploying" "docs.deploying"}}
+<DocsViewer as |viewer|>
+  <viewer.nav as |nav|>
+    <nav.section @label="Getting Started" />
+    <nav.item @label="What are Engines?" @route="docs.index" />
+    <nav.item @label="Installation" @route="docs.installation" />
+    <nav.item @label="Quickstart" @route="docs.quickstart" />
+    <nav.item @label="Deploying" @route="docs.deploying" />
 
-    {{nav.section "Core Concepts"}}
-    {{nav.item "Isolation" "docs.isolation"}}
-    {{nav.item "Routable vs. Routeless" "docs.routable-vs-routeless"}}
-    {{nav.item "Lazy loading" "docs.lazy-loading"}}
-    {{nav.item "Addons" "docs.addons"}}
-    {{nav.item "Services" "docs.services"}}
-    {{nav.item "Sharing code" "docs.sharing-code"}}
-    {{nav.item "Dependencies" "docs.dependencies"}}
-    {{nav.item "Bundling" "docs.bundling"}}
-    {{nav.item "Links" "docs.links"}}
+    <nav.section @label="Core Concepts" />
+    <nav.item @label="Isolation" @route="docs.isolation" />
+    <nav.item @label="Routable vs. Routeless" @route="docs.routable-vs-routeless" />
+    <nav.item @label="Lazy loading" @route="docs.lazy-loading" />
+    <nav.item @label="Addons" @route="docs.addons" />
+    <nav.item @label="Services" @route="docs.services" />
+    <nav.item @label="Sharing code" @route="docs.sharing-code" />
+    <nav.item @label="Dependencies" @route="docs.dependencies" />
+    <nav.item @label="Bundling" @route="docs.bundling" />
+    <nav.item @label="Links" @route="docs.links" />
 
-    {{nav.section "Components"}}
-    {{nav.item "link-to-external" "docs.link-to-external"}}
+    <nav.section @label="Components" />
+    <nav.item @label="link-to-external" @route="docs.link-to-external" />
 
-    {{nav.section "Testing"}}
-    {{nav.item "Introduction" "docs.testing-intro"}}
-    {{nav.item "Unit Tests" "docs.testing-unit"}}
-    {{nav.item "Rendering Tests" "docs.testing-integration"}}
-    {{nav.item "Application Tests" "docs.testing-acceptance"}}
+    <nav.section @label="Testing" />
+    <nav.item @label="Introduction" @route="docs.testing-intro" />
+    <nav.item @label="Unit Tests" @route="docs.testing-unit" />
+    <nav.item @label="Rendering Tests" @route="docs.testing-integration" />
+    <nav.item @label="Application Tests" @route="docs.testing-acceptance" />
 
-    {{nav.section "Migrating"}}
-    {{nav.item "Migrations" "docs.migrations"}}
-    {{nav.item "Deprecations" "docs.deprecations"}}
-  {{/viewer.nav}}
+    <nav.section @label="Migrating" />
+    <nav.item @label="Migrations" @route="docs.migrations" />
+    <nav.item @label="Deprecations" @route="docs.deprecations" />
+  </viewer.nav>
 
-  {{#viewer.main}}
+  <viewer.main>
     {{outlet}}
-  {{/viewer.main}}
-{{/docs-viewer}}
+  </viewer.main>
+</DocsViewer>

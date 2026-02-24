@@ -6,8 +6,8 @@ const Router = AddonDocsRouter.extend({
   rootURL: config.rootURL,
 });
 
-Router.map(function() {
-  docsRoute(this, function() {
+Router.map(function () {
+  docsRoute(this, function () {
     this.route('installation');
     this.route('quickstart');
     this.route('deploying');
@@ -29,6 +29,7 @@ Router.map(function() {
 
     this.route('links');
 
+    this.route('migrations');
     this.route('deprecations');
   });
 
