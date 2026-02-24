@@ -30,7 +30,7 @@
 
 3. In line with [RFC 674](https://rfcs.emberjs.com/id/0674-deprecate-transition-methods-of-controller-and-route/)
    transition methods of Controller and Route were removed.
-   Follow [deprecation guide](https://ember-engines.com/docs/deprecations#-transition-methods-of-controller-and-route) for migration examples.
+   Follow [deprecation guide](/docs/deprecations#-transition-methods-of-controller-and-route) for migration examples.
 
 4. Dropped support for query param only router service transitions until it's resolved upstream https://github.com/villander/ember-engines-router-service/issues/74.
 
