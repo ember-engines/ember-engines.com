@@ -1,5 +1,36 @@
 # Migrations
 
+### v0.12 -> v0.13
+
+1. Update engine.js to gain vite support for engines
+    ```diff
+    // addon/engine.js
+    import Engine from 'ember-engines/engine';
+    import Resolver from 'ember-resolver';
+    import loadInitializers from 'ember-load-initializers';
+    import config from './config/environment';
+    + import compatModules from '@embroider/virtual/compat-modules';
+
+    const { modulePrefix } = config;
+
+    class Eng extends Engine {
+    modulePrefix = config.modulePrefix;
+    - Resolver = Resolver;
+    + Resolver = Resolver.withModules(compatModules);
+    }
+
+    - loadInitializers(Eng, modulePrefix);
+    + loadInitializers(Eng, modulePrefix, compatModules);
+
+    export default Eng;
+    ```
+
+    this change is compatible with classic apps that have not upgraded to vite as long as they also upgrade to `ember-engines@^0.13.0`
+
+1. Only on classic apps (any app that does not use `@embroider/core` in `package.json`)  
+    Add `ember-asset-loader` as a dev dependency
+
+
 ### v0.10 -> v0.11
 
 1. `@ember/legacy-built-in-components` no longer required for ember engines.

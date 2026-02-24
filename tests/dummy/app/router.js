@@ -30,6 +30,7 @@ Router.map(function () {
     this.route('links');
 
     this.route('migrations');
+    this.route('embroider');
     this.route('deprecations');
   });
 
