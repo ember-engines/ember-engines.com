@@ -3,6 +3,7 @@
 ### v0.12 -> v0.13
 
 1. Update engine.js to gain vite support for engines
+
     ```diff
     // addon/engine.js
     import Engine from 'ember-engines/engine';
@@ -27,7 +28,7 @@
 
     this change is compatible with classic apps that have not upgraded to vite as long as they also upgrade to `ember-engines@^0.13.0`
 
-1. Only on classic apps (any app that does not use `@embroider/core` in `package.json`)  
+2. Only on classic apps (not being built with Vite - the default for new apps since 6.8)
     Add `ember-asset-loader` as a dev dependency
 
 
