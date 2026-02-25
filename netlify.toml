@@ -5,19 +5,22 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Optional: make site root go to /docs/
+# Make root go to /docs/
 [[redirects]]
   from = "/"
   to = "/docs/"
   status = 301
 
-# Prevent SPA fallback from eating JSON requests (fixes "Unexpected token '<' ... not valid JSON")
 [[redirects]]
-  from = "/docs/*.json"
-  to = "/docs/:splat.json"
+  from = "/docs/assets/*"
+  to = "/assets/:splat"
   status = 200
 
-# SPA fallback for docs deep-links
+[[redirects]]
+  from = "/docs/*.*"
+  to = "/:splat"
+  status = 200
+
 [[redirects]]
   from = "/docs/*"
   to = "/index.html"

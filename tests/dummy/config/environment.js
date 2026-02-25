@@ -42,7 +42,7 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // Allow ember-cli-addon-docs to update the rootURL in compiled assets
-    ENV.rootURL = '';
+    ENV.rootURL = '/docs/';
     // here you can enable a production-specific feature
   }
 
