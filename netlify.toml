@@ -1,29 +1,24 @@
-# netlify.toml
-
 [build]
-  # Build the Ember dummy app directly into dist/docs so all files (assets + any JSON)
-  # live under /docs/* and Netlify doesn't need hacky remaps.
-  command = "corepack enable && pnpm install --frozen-lockfile && pnpm ember build --environment=production --output-path dist/docs"
+  command = "corepack enable && pnpm install --frozen-lockfile && pnpm build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
+  NODE_VERSION = "22"
 
-# Nice UX: root goes to docs
+# Optional: make site root go to /docs/
 [[redirects]]
   from = "/"
   to = "/docs/"
   status = 301
 
-# IMPORTANT: don't let the SPA fallback rewrite JSON requests to HTML
-# (this is the source of the `Unexpected token '<' ... not valid JSON` error)
+# Prevent SPA fallback from eating JSON requests (fixes "Unexpected token '<' ... not valid JSON")
 [[redirects]]
   from = "/docs/*.json"
   to = "/docs/:splat.json"
   status = 200
 
-# SPA fallback for docs routes (deep links)
+# SPA fallback for docs deep-links
 [[redirects]]
   from = "/docs/*"
-  to = "/docs/index.html"
+  to = "/index.html"
   status = 200
