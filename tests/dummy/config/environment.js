@@ -41,9 +41,18 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    // Allow ember-cli-addon-docs to update the rootURL in compiled assets
-    ENV.rootURL = '';
-    // here you can enable a production-specific feature
+    // Netlify sets CONTEXT to: production | deploy-preview | branch-deploy | dev
+    let context = process.env.CONTEXT;
+
+    // In deploy previews / branch deploys, the site is hosted at the root:
+    // https://deploy-preview-123--site.netlify.app/
+    // so the app must use '/'.
+    if (context === 'deploy-preview' || context === 'branch-deploy') {
+      ENV.rootURL = '/';
+    } else {
+      // Real production is hosted at /docs/
+      ENV.rootURL = '/docs/';
+    }
   }
 
   return ENV;
