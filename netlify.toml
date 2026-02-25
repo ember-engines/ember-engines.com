@@ -5,12 +5,20 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# If index.html references /docs/assets/*, map it to the real /assets/*
 [[redirects]]
-  from = "/docs/*"
-  to = "/docs/index.html"
+  from = "/docs/assets/*"
+  to = "/assets/:splat"
   status = 200
 
+# Serve the SPA for all /docs routes
 [[redirects]]
-  from = "/*"
+  from = "/docs/*"
   to = "/index.html"
   status = 200
+
+# Optional: make site root go to docs
+[[redirects]]
+  from = "/"
+  to = "/docs/"
+  status = 301
