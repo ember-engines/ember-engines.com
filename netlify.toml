@@ -5,7 +5,6 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Make root go to /docs/
 [[redirects]]
   from = "/"
   to = "/docs/"
@@ -14,11 +13,6 @@
 [[redirects]]
   from = "/docs/assets/*"
   to = "/assets/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/docs/*.*"
-  to = "/:splat"
   status = 200
 
 [[redirects]]
