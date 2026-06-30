@@ -28,7 +28,7 @@
     "deploy": "ADDON_DOCS_UPDATE_LATEST=true node_modules/.bin/ember deploy production"
   },
   "dependencies": {
-    "@babel/core": "^7.27.1",
+    "@babel/core": "^7.29.6",
     "ember-cli-babel": "~8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-template-imports": "^4.3.0"
